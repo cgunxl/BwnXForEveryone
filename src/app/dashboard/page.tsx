@@ -1,53 +1,46 @@
 import { TrackedLink } from '@/components/TrackedLink'
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Dashboard - BwnX Platform',
-  description: 'Dashboard page for BwnX Platform',
-}
 
 export default function Dashboard() {
   return (
-    <div className="min-h-screen bg-black text-white p-8">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8">Dashboard</h1>
+    <main className="min-h-screen bg-black flex flex-col items-center justify-center relative overflow-hidden pt-24">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/5 to-transparent"></div>
+      </div>
+      
+      {/* Main Content */}
+      <div className="relative z-10 text-center px-6">
+        {/* Dashboard Title */}
+        <h1 className="text-6xl md:text-8xl font-bold text-white mb-16 animate-fade-in-left">
+          แดชบอร์ด
+        </h1>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white/10 p-6 rounded-lg">
-            <h2 className="text-2xl font-semibold mb-4">Welcome to BwnX Platform</h2>
-            <p className="text-gray-300 mb-4">
-              This is your dashboard where you can manage your platform activities.
-            </p>
-            <TrackedLink 
-              href="/" 
-              eventName="back_to_home"
-              className="inline-block bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-200 transition-colors"
-            >
-              กลับหน้าหลัก
-            </TrackedLink>
-          </div>
-          
-          <div className="bg-white/10 p-6 rounded-lg">
-            <h2 className="text-2xl font-semibold mb-4">Quick Actions</h2>
-            <div className="space-y-3">
-              <TrackedLink 
-                href="/about" 
-                eventName="navigate_to_about"
-                className="block w-full bg-white/20 p-4 rounded-lg hover:bg-white/30 transition-colors text-center"
-              >
-                เกี่ยวกับเรา
-              </TrackedLink>
-              <TrackedLink 
-                href="/contact" 
-                eventName="navigate_to_contact"
-                className="block w-full bg-white/20 p-4 rounded-lg hover:bg-white/30 transition-colors text-center"
-              >
-                ติดต่อเรา
-              </TrackedLink>
+        {/* Back Button */}
+        <div className="flex justify-center">
+          <TrackedLink 
+            href="/" 
+            eventName="dashboard_back_click"
+            className="group relative inline-block"
+          >
+            <div className="relative">
+              {/* Transparent border */}
+              <div className="absolute inset-0 bg-white/20 rounded-2xl blur-sm"></div>
+              
+              {/* Main button */}
+              <div className="relative bg-black border-2 border-white/30 rounded-2xl px-12 py-6 transition-all duration-300 group-hover:border-white/50 group-hover:scale-105">
+                <span className="text-2xl md:text-3xl font-semibold text-white">
+                  กลับหน้าแรก
+                </span>
+              </div>
             </div>
-          </div>
+          </TrackedLink>
         </div>
       </div>
-    </div>
+      
+      {/* Floating Elements */}
+      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 animate-float">
+        <div className="w-2 h-2 bg-white/30 rounded-full"></div>
+      </div>
+    </main>
   )
 }

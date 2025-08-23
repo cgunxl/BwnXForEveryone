@@ -1,23 +1,19 @@
 'use client'
 
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import { useEffect } from 'react'
 
 interface TrackedLinkProps {
   href: string
   eventName: string
   children: React.ReactNode
   className?: string
-  [key: string]: any
+  [key: string]: unknown
 }
 
 export function TrackedLink({ href, eventName, children, className, ...props }: TrackedLinkProps) {
-  const router = useRouter()
-
   const trackClick = () => {
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'click', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'click', {
         event_category: 'engagement',
         event_label: eventName,
         value: 1
@@ -25,7 +21,7 @@ export function TrackedLink({ href, eventName, children, className, ...props }: 
     }
   }
 
-  const handleClick = (e: React.MouseEvent) => {
+  const handleClick = () => {
     trackClick()
     // Let the default Link behavior handle navigation
   }
