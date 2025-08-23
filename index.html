@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BwnX - Platform แนะนำสิ่งที่ดีที่สุดในการใช้ชีวิต</title>
     <meta name="description" content="BwnX - Platform การให้คำแนะนำสิ่งที่คุณต้องการที่ดีที่สุดในการใช้ชีวิต หาเงิน และไลฟ์สไตล์">
+    
+    <!-- Alternate language links for SEO -->
+    <link rel="alternate" hreflang="en" href="https://cgunxl.github.io/BwnXForEveryone/en/" />
+    <link rel="alternate" hreflang="es" href="https://cgunxl.github.io/BwnXForEveryone/es/" />
+    <link rel="alternate" hreflang="pt" href="https://cgunxl.github.io/BwnXForEveryone/pt/" />
+    <link rel="alternate" hreflang="de" href="https://cgunxl.github.io/BwnXForEveryone/de/" />
+    <link rel="alternate" hreflang="fr" href="https://cgunxl.github.io/BwnXForEveryone/fr/" />
+    <link rel="alternate" hreflang="ja" href="https://cgunxl.github.io/BwnXForEveryone/ja/" />
+    <link rel="alternate" hreflang="ko" href="https://cgunxl.github.io/BwnXForEveryone/ko/" />
+    <link rel="alternate" hreflang="zh" href="https://cgunxl.github.io/BwnXForEveryone/zh/" />
+    <link rel="alternate" hreflang="ar" href="https://cgunxl.github.io/BwnXForEveryone/ar/" />
+    <link rel="alternate" hreflang="th" href="https://cgunxl.github.io/BwnXForEveryone/th/" />
+    <link rel="alternate" hreflang="x-default" href="https://cgunxl.github.io/BwnXForEveryone/en/" />
+    
     <style>
         * {
             margin: 0;
@@ -21,6 +35,92 @@
             align-items: center;
             color: white;
             padding: 20px;
+            position: relative;
+        }
+        
+        /* Language Switcher Styles */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .language-btn {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            padding: 8px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .language-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        
+        .flag-icon {
+            width: 24px;
+            height: 18px;
+            border-radius: 2px;
+            object-fit: cover;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 10px;
+            background: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 8px;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .language-dropdown.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .language-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .language-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .language-option.active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .language-name {
+            flex: 1;
+            font-size: 14px;
         }
         
         .container {
@@ -53,74 +153,30 @@
         .description {
             font-size: 1.1em;
             line-height: 1.6;
+            opacity: 0.8;
             margin-bottom: 40px;
-            opacity: 0.85;
             animation: fadeInUp 1s ease-out 0.4s;
             animation-fill-mode: both;
         }
         
-        .button-group {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 1s ease-out 0.6s;
-            animation-fill-mode: both;
-        }
-        
-        .btn {
-            padding: 15px 30px;
-            background: white;
-            color: #000000;
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            color: white;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: bold;
             font-size: 1.1em;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
-            background: #f0f0f0;
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: #000000;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-            animation: fadeInUp 1s ease-out 0.8s;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-out 0.6s;
             animation-fill-mode: both;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
         }
         
-        .feature {
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .feature:hover {
-            transform: scale(1.05);
-        }
-        
-        .feature-icon {
-            font-size: 2em;
-            margin-bottom: 10px;
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
         }
         
         @keyframes fadeInUp {
@@ -134,114 +190,199 @@
             }
         }
         
-        .logo {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 20px;
-            background: white;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+            animation: fadeInUp 1s ease-out 0.8s;
+            animation-fill-mode: both;
+        }
+        
+        .feature {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .feature-icon {
             font-size: 2em;
-            font-weight: bold;
-            color: #000000;
-            animation: pulse 2s infinite;
+            margin-bottom: 10px;
         }
         
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-            }
+        .feature-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #667eea;
         }
         
-        .footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            opacity: 0.7;
-            font-size: 0.9em;
+        .feature-description {
+            opacity: 0.8;
+            line-height: 1.5;
         }
         
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
             }
+            
             .subtitle {
                 font-size: 1.2em;
             }
+            
             .container {
                 padding: 30px 20px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .language-switcher {
+                top: 10px;
+                right: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">BwnX</div>
-        <h1>BwnX</h1>
-        <p class="subtitle">Platform การให้คำแนะนำสิ่งที่คุณต้องการ</p>
-        <p class="description">
-            ยินดีต้อนรับสู่ BwnX - Platform การให้คำแนะนำสิ่งที่คุณต้องการที่ดีที่สุดในการใช้ชีวิต 
-            หาเงิน และไลฟ์สไตล์ ที่รวม AI, แอพ, วิธีใช้, การเงิน และอื่นๆ อีกมากมาย 
-            เพื่อช่วยให้คุณมีชีวิตที่ดีขึ้นในทุกด้าน
-        </p>
-        
-        <div class="button-group">
-            <a href="#" class="btn">เริ่มต้นเลย</a>
-            <a href="#features" class="btn btn-secondary">ดูรายละเอียด</a>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="language-btn" onclick="toggleLanguageDropdown()">
+            <img src="https://flagcdn.com/w40/th.png" alt="TH" class="flag-icon" id="currentFlag">
+            <span id="currentLangCode">TH</span>
+            <span style="font-size: 12px;">▼</span>
+        </button>
+        <div class="language-dropdown" id="languageDropdown">
+            <a href="https://cgunxl.github.io/BwnXForEveryone/en/" class="language-option">
+                <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag-icon">
+                <span class="language-name">English</span>
+            </a>
+            <a href="https://cgunxl.github.io/BwnXForEveryone/es/" class="language-option">
+                <img src="https://flagcdn.com/w40/es.png" alt="ES" class="flag-icon">
+                <span class="language-name">Español</span>
+            </a>
+            <a href="https://cgunxl.github.io/BwnXForEveryone/pt/" class="language-option">
+                <img src="https://flagcdn.com/w40/br.png" alt="PT" class="flag-icon">
+                <span class="language-name">Português</span>
+            </a>
+            <a href="https://cgunxl.github.io/BwnXForEveryone/de/" class="language-option">
+                <img src="https://flagcdn.com/w40/de.png" alt="DE" class="flag-icon">
+                <span class="language-name">Deutsch</span>
+            </a>
+            <a href="https://cgunxl.github.io/BwnXForEveryone/fr/" class="language-option">
+                <img src="https://flagcdn.com/w40/fr.png" alt="FR" class="flag-icon">
+                <span class="language-name">Français</span>
+            </a>
+            <a href="https://cgunxl.github.io/BwnXForEveryone/ja/" class="language-option">
+                <img src="https://flagcdn.com/w40/jp.png" alt="JA" class="flag-icon">
+                <span class="language-name">日本語</span>
+            </a>
+            <a href="https://cgunxl.github.io/BwnXForEveryone/ko/" class="language-option">
+                <img src="https://flagcdn.com/w40/kr.png" alt="KO" class="flag-icon">
+                <span class="language-name">한국어</span>
+            </a>
+            <a href="https://cgunxl.github.io/BwnXForEveryone/zh/" class="language-option">
+                <img src="https://flagcdn.com/w40/cn.png" alt="ZH" class="flag-icon">
+                <span class="language-name">中文</span>
+            </a>
+            <a href="https://cgunxl.github.io/BwnXForEveryone/ar/" class="language-option">
+                <img src="https://flagcdn.com/w40/sa.png" alt="AR" class="flag-icon">
+                <span class="language-name">العربية</span>
+            </a>
+            <a href="https://cgunxl.github.io/BwnXForEveryone/th/" class="language-option active">
+                <img src="https://flagcdn.com/w40/th.png" alt="TH" class="flag-icon">
+                <span class="language-name">ไทย</span>
+            </a>
         </div>
+    </div>
+
+    <div class="container">
+        <h1>BwnX</h1>
+        <p class="subtitle">Platform แนะนำสิ่งที่ดีที่สุดในการใช้ชีวิต</p>
+        <p class="description">
+            ค้นพบคำแนะนำที่ดีที่สุดสำหรับการใช้ชีวิต การหาเงิน และไลฟ์สไตล์ที่เหมาะกับคุณ
+            เรารวบรวมข้อมูลและเคล็ดลับที่มีประโยชน์เพื่อช่วยให้คุณตัดสินใจได้ดีขึ้น
+        </p>
+        <a href="#" class="cta-button">เริ่มต้นใช้งาน</a>
         
-        <div class="features" id="features">
-            <div class="feature">
-                <div class="feature-icon">🤖</div>
-                <h3>AI & Technology</h3>
-                <p>คำแนะนำ AI และเทคโนโลยีล่าสุดที่ช่วยในชีวิตประจำวัน</p>
-            </div>
+        <div class="features">
             <div class="feature">
                 <div class="feature-icon">💰</div>
-                <h3>การเงิน</h3>
-                <p>วิธีหาเงิน การลงทุน และการจัดการการเงินส่วนบุคคล</p>
+                <div class="feature-title">การเงิน</div>
+                <div class="feature-description">เคล็ดลับการบริหารเงินและการลงทุน</div>
             </div>
             <div class="feature">
-                <div class="feature-icon">📱</div>
-                <h3>แอพ & Tools</h3>
-                <p>แนะนำแอพและเครื่องมือที่ดีที่สุดสำหรับทุกความต้องการ</p>
+                <div class="feature-icon">🎯</div>
+                <div class="feature-title">เป้าหมาย</div>
+                <div class="feature-description">วางแผนและบรรลุเป้าหมายในชีวิต</div>
             </div>
             <div class="feature">
                 <div class="feature-icon">✨</div>
-                <h3>ไลฟ์สไตล์</h3>
-                <p>เคล็ดลับการใช้ชีวิตให้มีความสุขและประสบความสำเร็จ</p>
+                <div class="feature-title">ไลฟ์สไตล์</div>
+                <div class="feature-description">พัฒนาคุณภาพชีวิตให้ดีขึ้น</div>
             </div>
         </div>
-        
-        <div class="footer">
-            <p>© 2024 BwnX - Platform แนะนำสิ่งที่ดีที่สุดในชีวิต</p>
-            <p style="margin-top: 10px;">
-                <a href="https://github.com/cgunxl/BwnXForEveryone" style="color: white; opacity: 0.8;">GitHub</a>
-            </p>
-        </div>
     </div>
-    
+
     <script>
-        // Add smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
+        // Language switcher functionality
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const languageSwitcher = document.querySelector('.language-switcher');
+            if (!languageSwitcher.contains(event.target)) {
+                document.getElementById('languageDropdown').classList.remove('show');
+            }
         });
+
+        // Detect current language from URL and update the button
+        function updateCurrentLanguage() {
+            const path = window.location.pathname;
+            const languages = {
+                '/en/': { code: 'EN', flag: 'gb', name: 'English' },
+                '/es/': { code: 'ES', flag: 'es', name: 'Español' },
+                '/pt/': { code: 'PT', flag: 'br', name: 'Português' },
+                '/de/': { code: 'DE', flag: 'de', name: 'Deutsch' },
+                '/fr/': { code: 'FR', flag: 'fr', name: 'Français' },
+                '/ja/': { code: 'JA', flag: 'jp', name: '日本語' },
+                '/ko/': { code: 'KO', flag: 'kr', name: '한국어' },
+                '/zh/': { code: 'ZH', flag: 'cn', name: '中文' },
+                '/ar/': { code: 'AR', flag: 'sa', name: 'العربية' },
+                '/th/': { code: 'TH', flag: 'th', name: 'ไทย' }
+            };
+
+            // Find current language
+            for (const [langPath, langInfo] of Object.entries(languages)) {
+                if (path.includes(langPath)) {
+                    document.getElementById('currentFlag').src = `https://flagcdn.com/w40/${langInfo.flag}.png`;
+                    document.getElementById('currentLangCode').textContent = langInfo.code;
+                    
+                    // Update active state in dropdown
+                    document.querySelectorAll('.language-option').forEach(option => {
+                        option.classList.remove('active');
+                        if (option.href.includes(langPath)) {
+                            option.classList.add('active');
+                        }
+                    });
+                    break;
+                }
+            }
+        }
+
+        // Call on page load
+        updateCurrentLanguage();
     </script>
 </body>
 </html>
