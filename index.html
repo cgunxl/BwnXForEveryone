@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="th">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>เริ่มต้น</title>
+	<style>
+		:root { color-scheme: dark; }
+		html, body {
+			margin: 0;
+			height: 100%;
+			background: #000;
+		}
+		body {
+			display: grid;
+			place-items: center;
+			font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+		}
+
+		.container {
+			display: grid;
+			place-items: center;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		.button-start {
+			appearance: none;
+			background: transparent;
+			color: #fff;
+			border: 2px solid #000;
+			border-color: #111; /* deep black-ish to show on pure black via subtle contrast */
+			padding: 0.9rem 2rem;
+			font-size: 1.125rem;
+			font-weight: 600;
+			letter-spacing: 0.02em;
+			border-radius: 999px;
+			cursor: pointer;
+			backdrop-filter: blur(0px);
+			text-shadow: 0 0 0 rgba(0,0,0,0); /* keep text crisp */
+			outline: none;
+			transform: translateY(-40px);
+			opacity: 0;
+			animation: slideDown 700ms cubic-bezier(.2,.8,.2,1) 100ms forwards;
+		}
+
+		.button-start:hover {
+			border-color: #222;
+			transform: translateY(-40px) scale(1.02);
+		}
+
+		.button-start:active {
+			transform: translateY(-40px) scale(0.98);
+		}
+
+		@keyframes slideDown {
+			0% { transform: translateY(-40px); opacity: 0; }
+			100% { transform: translateY(0); opacity: 1; }
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<button class="button-start">เริ่มต้น</button>
+	</div>
+</body>
+</html>
