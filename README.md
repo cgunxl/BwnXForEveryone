@@ -1,104 +1,72 @@
-อันนี้ไม่ต้องโชว์ขึ้น pages เป็นระบบเบื้องบ้าน *ย้ำว่าไม่เกี่ยวกับการขึ้น pages
 # BwnX Platform
 
-เว็บแพลตฟอร์มที่สร้างด้วย Next.js พร้อมกับฟีเจอร์ SEO และ Google Analytics 4
+แพลตฟอร์ม BwnX - โซลูชันนวัตกรรมสำหรับธุรกิจ
 
 ## ฟีเจอร์หลัก
 
-### 🚀 Next.js + SEO
-- ใช้ Next.js App Router
-- `<Link>` component สำหรับ SEO-friendly navigation
-- `generateMetadata()` สำหรับ dynamic metadata
-- `sitemap.ts` และ `robots.ts` สำหรับ SEO
-- Google Bot friendly
+### หน้าแรก (Home Page)
+- **แท็บด้านบนสุด**: มีเส้นขีดเพื่อแสดงว่าเป็นแท็บ
+- **ปุ่มเมนู**: ปุ่มสามขีดด้านซ้ายบน (สีดำโปร่งใส กรอบสีดำ)
+- **สไลด์เมนู**: เลื่อนลงมา 1/4 ของหน้าจอ พร้อมข้อความ "กำลังพัฒนา"
+- **การติดตาม**: ใช้ GA4 สำหรับติดตาม pageview และการคลิก
 
-### 📊 Google Analytics 4
-- GA4 script ติดตั้งใน `layout.tsx`
-- PageView tracking สำหรับ SPA navigation
-- Click tracking ด้วย `<TrackedLink>` component
-- Custom event tracking
+### การติดตาม GA4
+- ติดตั้ง GA4 script ใน layout.tsx
+- เพิ่ม provider นับ pageview SPA ทุกครั้งที่เปลี่ยนเส้นทาง
+- สร้าง `<TrackedLink>` สำหรับนับคลิกปุ่ม/ลิงก์ทุกตัว
 
-### 🎨 UI/UX
-- Background สีดำ
-- ปุ่มเริ่มต้นสีดำมีกรอบใส
-- ข้อความ "BwnX Platform" จากด้านซ้าย
-- Animation และ hover effects
-- Responsive design
+## การติดตั้งและรัน
 
-## การติดตั้ง
-
-1. Clone โปรเจค
 ```bash
-git clone <repository-url>
-cd bwnx-platform
-```
-
-2. ติดตั้ง dependencies
-```bash
+# ติดตั้ง dependencies
 npm install
-```
 
-3. ตั้งค่า Environment Variables
-```bash
-cp .env.local.example .env.local
-# แก้ไข NEXT_PUBLIC_GA_MEASUREMENT_ID ใน .env.local
-```
-
-4. รันโปรเจค
-```bash
+# รันในโหมด development
 npm run dev
+
+# Build สำหรับ production
+npm run build
+
+# รันในโหมด production
+npm start
 ```
-
-## การใช้งาน
-
-### TrackedLink Component
-ใช้สำหรับติดตามการคลิกลิงก์ใน GA4:
-
-```tsx
-import { TrackedLink } from '@/components/TrackedLink'
-
-<TrackedLink 
-  href="/dashboard" 
-  eventName="start_button_click"
-  className="btn-primary"
->
-  เริ่มต้น
-</TrackedLink>
-```
-
-### Google Analytics
-- ตั้งค่า `NEXT_PUBLIC_GA_MEASUREMENT_ID` ใน `.env.local`
-- GA4 จะติดตาม pageview และ custom events อัตโนมัติ
 
 ## โครงสร้างโปรเจค
 
 ```
 src/
 ├── app/
-│   ├── layout.tsx          # Root layout พร้อม GA4
-│   ├── page.tsx            # หน้าหลัก
-│   ├── dashboard/          # หน้าดาชบอร์ด
-│   ├── robots.ts           # SEO robots
-│   └── sitemap.ts          # SEO sitemap
+│   ├── layout.tsx          # Layout หลักพร้อม GA4
+│   ├── page.tsx            # หน้าแรก
+│   └── globals.css         # สไตล์หลัก
 ├── components/
+│   ├── Header.tsx          # Header พร้อมแท็บและปุ่มเมนู
+│   ├── SlideMenu.tsx       # สไลด์เมนู
 │   ├── GoogleAnalytics.tsx # GA4 script
-│   ├── TrackedLink.tsx     # Link with tracking
-│   └── PageViewTracker.tsx # Pageview tracking
+│   ├── PageViewTracker.tsx # ติดตาม pageview
+│   └── TrackedLink.tsx     # ลิงก์พร้อมการติดตาม
 └── lib/
-    └── metadata.ts         # Metadata utilities
+    └── metadata.ts         # Metadata สำหรับ SEO
 ```
 
-## การปรับแต่ง
+## การใช้งาน
 
-### สีและธีม
-แก้ไขใน `src/app/globals.css` และ Tailwind config
+1. **เปิดเมนู**: คลิกปุ่มสามขีดด้านซ้ายบน
+2. **ปิดเมนู**: คลิกปุ่ม X หรือคลิกนอกเมนู
+3. **นำทาง**: ใช้ลิงก์ในเมนูเพื่อไปยังหน้าต่างๆ
 
-### GA4 Events
-เพิ่ม custom events ใน `TrackedLink` component
+## เทคโนโลยีที่ใช้
 
-### SEO
-ปรับแต่ง metadata ใน `src/lib/metadata.ts`
+- **Next.js 15** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Utility-first CSS framework
+- **Google Analytics 4** - การติดตามผู้ใช้
+- **React 19** - UI library
 
-## License
+## สถานะการพัฒนา
 
-MIT
+🟡 **กำลังพัฒนา** - ระบบกำลังอยู่ในขั้นตอนการพัฒนา กรุณารอสักครู่
+
+## การสนับสนุน
+
+หากมีคำถามหรือปัญหาการใช้งาน กรุณาติดต่อทีม BwnX
