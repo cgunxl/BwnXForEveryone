@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BwnX - หน้าหลัก | แพลตฟอร์มแนะนำการใช้ชีวิต</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../language-switcher.js" defer></script>
+    <script src="../navigation.js" defer></script>
+    <script src="../categories.js" defer></script>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="BwnX Thailand - แพลตฟอร์มแนะนำการใช้ชีวิต แอปพลิเคชัน สินค้า บริการ และคำแนะนำที่ดีที่สุดสำหรับคนไทย">
+    <meta name="keywords" content="BwnX, แนะนำ, การใช้ชีวิต, แอป, สินค้า, บริการ, คำแนะนำ, ไทย">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="BwnX Thailand - แพลตฟอร์มแนะนำการใช้ชีวิต">
+    <meta property="og:description" content="ค้นพบแอป สินค้า บริการ และคำแนะนำที่ดีที่สุดสำหรับชีวิตที่ดีขึ้น">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cgunxl.github.io/th/main">
+    <meta property="og:image" content="https://cgunxl.github.io/Logoserver1.png">
+    
+    <!-- Canonical and Hreflang -->
+    <link rel="canonical" href="https://cgunxl.github.io/th/main">
+    <link rel="alternate" hreflang="th" href="https://cgunxl.github.io/th/main" />
+    <link rel="alternate" hreflang="en" href="https://cgunxl.github.io/en/main" />
+    <link rel="alternate" hreflang="x-default" href="https://cgunxl.github.io/en/main" />
+</head>
+<body>
+    <!-- Enhanced Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <button class="hamburger" id="hamburgerMenu" aria-label="เปิดเมนู">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="brand">
+                    <img src="../Logoserver1.png" alt="BwnX Logo" class="brand-logo">
+                    <span class="brand-text">BwnX</span>
+                </div>
+                <div class="nav-links">
+                    <a href="/th/" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>หน้าแรก</span>
+                    </a>
+                    <a href="/th/main" class="nav-link active">
+                        <i class="fas fa-th-large"></i>
+                        <span>หมวดหมู่</span>
+                    </a>
+                    <a href="/th/trending" class="nav-link">
+                        <i class="fas fa-fire"></i>
+                        <span>มาแรง</span>
+                    </a>
+                    <a href="/th/favorites" class="nav-link">
+                        <i class="fas fa-heart"></i>
+                        <span>รายการโปรด</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="nav-center">
+                <div class="search-bar">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M21 21l-4.35-4.35M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <input type="text" class="search-input" placeholder="ค้นหาแอป สินค้า บทความ..." id="searchInput">
+                    <button class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="nav-right">
+                <button class="notification-btn" aria-label="การแจ้งเตือน">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="theme-toggle" id="themeToggle" aria-label="เปลี่ยนธีม">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="language-selector" id="languageSelector">
+                    <div class="current-language">
+                        <img src="https://flagcdn.com/w20/th.png" alt="TH" class="flag-icon">
+                        <span>TH</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="language-dropdown" id="languageDropdown"></div>
+                </div>
+                <button class="user-menu" aria-label="เมนูผู้ใช้">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Enhanced Sidebar with All Categories -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>เมนูหมวดหมู่</h3>
+            <button class="sidebar-close" id="sidebarClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-search">
+                <input type="text" placeholder="ค้นหาหมวดหมู่..." class="sidebar-search-input">
+            </div>
+            <div class="categories-menu" id="categoriesMenu">
+                <!-- Categories will be populated by JavaScript -->
+            </div>
+            <div class="sidebar-footer">
+                <a href="/th/about" class="sidebar-link">
+                    <i class="fas fa-info-circle"></i> เกี่ยวกับเรา
+                </a>
+                <a href="/th/contact" class="sidebar-link">
+                    <i class="fas fa-envelope"></i> ติดต่อเรา
+                </a>
+                <a href="/th/help" class="sidebar-link">
+                    <i class="fas fa-question-circle"></i> ช่วยเหลือ
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="/th/">หน้าแรก</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>หมวดหมู่ทั้งหมด</span>
+            </div>
+        </div>
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">
+                    <span class="gradient-text">หมวดหมู่ทั้งหมด</span>
+                </h1>
+                <p class="page-description">
+                    เลือกหมวดหมู่ที่คุณสนใจ พร้อมหมวดหมู่ย่อยมากมาย
+                </p>
+            </div>
+        </section>
+
+        <!-- Quick Stats -->
+        <section class="quick-stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-th-large"></i>
+                        <div class="stat-info">
+                            <div class="stat-value">20+</div>
+                            <div class="stat-label">หมวดหมู่หลัก</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-layer-group"></i>
+                        <div class="stat-info">
+                            <div class="stat-value">100+</div>
+                            <div class="stat-label">หมวดหมู่ย่อย</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-file-alt"></i>
+                        <div class="stat-info">
+                            <div class="stat-value">500+</div>
+                            <div class="stat-label">บทความ</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-info">
+                            <div class="stat-value">10K+</div>
+                            <div class="stat-label">ผู้ใช้งาน</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Categories Grid -->
+        <section class="all-categories">
+            <div class="container">
+                <!-- Apps & Websites -->
+                <div class="category-section">
+                    <div class="category-header-main">
+                        <h2 class="category-title">
+                            <span class="category-emoji">📱</span>
+                            Apps & Website
+                        </h2>
+                        <span class="category-badge">7 หมวดหมู่ย่อย</span>
+                    </div>
+                    <div class="subcategory-grid">
+                        <a href="/th/category/apps/travel" class="subcategory-card">
+                            <span class="sub-icon">✈️</span>
+                            <h3>Smart Travel & Booking</h3>
+                            <p>ท่องเที่ยว & การจองตั๋ว</p>
+                        </a>
+                        <a href="/th/category/apps/career" class="subcategory-card">
+                            <span class="sub-icon">💼</span>
+                            <h3>Career & Freelance Hub</h3>
+                            <p>แพลตฟอร์มหางาน & ฟรีแลนซ์</p>
+                        </a>
+                        <a href="/th/category/apps/ai-finance" class="subcategory-card">
+                            <span class="sub-icon">🤖</span>
+                            <h3>AI Tools & Finance Apps</h3>
+                            <p>AI + แอปการเงิน</p>
+                        </a>
+                        <a href="/th/category/apps/social" class="subcategory-card">
+                            <span class="sub-icon">📱</span>
+                            <h3>Social & Lifestyle Connect</h3>
+                            <p>หาเพื่อน & หาคู่ & โซเชียล</p>
+                        </a>
+                        <a href="/th/category/apps/ecommerce" class="subcategory-card">
+                            <span class="sub-icon">🛒</span>
+                            <h3>E-commerce & Shopping Apps</h3>
+                            <p>แอปสั่งของออนไลน์</p>
+                        </a>
+                        <a href="/th/category/apps/vpn" class="subcategory-card">
+                            <span class="sub-icon">🔒</span>
+                            <h3>Safe Web & VPN Solutions</h3>
+                            <p>VPN & อินเทอร์เน็ตปลอดภัย</p>
+                        </a>
+                        <a href="/th/category/apps/affiliate" class="subcategory-card new">
+                            <span class="sub-icon">💵</span>
+                            <h3>Affiliate & Money-Making Apps</h3>
+                            <p>แอปหาเงิน & แอฟฟิลิเอต</p>
+                            <span class="new-badge">ใหม่</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Channel -->
+                <div class="category-section">
+                    <div class="category-header-main">
+                        <h2 class="category-title">
+                            <span class="category-emoji">🎥</span>
+                            Channel
+                        </h2>
+                        <span class="category-badge">7 หมวดหมู่ย่อย</span>
+                    </div>
+                    <div class="subcategory-grid">
+                        <a href="/th/category/channel/investment" class="subcategory-card">
+                            <span class="sub-icon">📊</span>
+                            <h3>Investment & Trading Channels</h3>
+                            <p>ช่องการลงทุน & เทรด</p>
+                        </a>
+                        <a href="/th/category/channel/knowledge" class="subcategory-card">
+                            <span class="sub-icon">📚</span>
+                            <h3>Knowledge & Deep-Dive Learning</h3>
+                            <p>ช่องหาความรู้ & เจาะลึกบุคคล</p>
+                        </a>
+                        <a href="/th/category/channel/podcast" class="subcategory-card">
+                            <span class="sub-icon">🎙️</span>
+                            <h3>Podcasts & Expert Talks</h3>
+                            <p>พอดแคสต์ & บทสัมภาษณ์</p>
+                        </a>
+                        <a href="/th/category/channel/entertainment" class="subcategory-card">
+                            <span class="sub-icon">🎬</span>
+                            <h3>Entertainment & Lifestyle Media</h3>
+                            <p>ความบันเทิง & สุขภาพ</p>
+                        </a>
+                        <a href="/th/category/channel/review" class="subcategory-card">
+                            <span class="sub-icon">🛍️</span>
+                            <h3>E-commerce & Product Review</h3>
+                            <p>รีวิวสินค้า & ร้านค้าออนไลน์</p>
+                        </a>
+                        <a href="/th/category/channel/gaming" class="subcategory-card">
+                            <span class="sub-icon">🎮</span>
+                            <h3>Gaming Deals & Tutorials</h3>
+                            <p>ดีลเกม & สอนเกม</p>
+                        </a>
+                        <a href="/th/category/channel/passive-income" class="subcategory-card new">
+                            <span class="sub-icon">🔗</span>
+                            <h3>Affiliate & Passive Income Channels</h3>
+                            <p>ช่องสอนหาเงินออนไลน์ & Affiliate</p>
+                            <span class="new-badge">ใหม่</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Continue with other categories... -->
+                <!-- Products -->
+                <div class="category-section">
+                    <div class="category-header-main">
+                        <h2 class="category-title">
+                            <span class="category-emoji">🛍️</span>
+                            Product
+                        </h2>
+                        <span class="category-badge">7 หมวดหมู่ย่อย</span>
+                    </div>
+                    <div class="subcategory-grid">
+                        <a href="/th/category/product/beauty" class="subcategory-card">
+                            <span class="sub-icon">💄</span>
+                            <h3>Influencer Picks & Beauty</h3>
+                            <p>สินค้าคนดัง & ครีมบำรุง</p>
+                        </a>
+                        <a href="/th/category/product/health" class="subcategory-card">
+                            <span class="sub-icon">🍀</span>
+                            <h3>Health & Wellness Products</h3>
+                            <p>สุขภาพ & อาหารเสริม</p>
+                        </a>
+                        <a href="/th/category/product/gadgets" class="subcategory-card">
+                            <span class="sub-icon">⚡</span>
+                            <h3>Smart Living & Gadgets</h3>
+                            <p>ของใช้ทั่วไป & เครื่องอำนวยความสะดวก</p>
+                        </a>
+                        <a href="/th/category/product/fashion" class="subcategory-card">
+                            <span class="sub-icon">👕</span>
+                            <h3>Fashion & Outfit Ideas</h3>
+                            <p>เสื้อผ้า & Outfit</p>
+                        </a>
+                        <a href="/th/category/product/jewelry" class="subcategory-card">
+                            <span class="sub-icon">💍</span>
+                            <h3>Jewelry & Luxury Items</h3>
+                            <p>สร้อยคอ & เครื่องประดับ</p>
+                        </a>
+                        <a href="/th/category/product/deals" class="subcategory-card">
+                            <span class="sub-icon">🎁</span>
+                            <h3>Lucky Draw & Deals</h3>
+                            <p>สินค้าเสี่ยงโชค & ดีลพิเศษ</p>
+                        </a>
+                        <a href="/th/category/product/marketplace" class="subcategory-card new">
+                            <span class="sub-icon">🛒</span>
+                            <h3>Affiliate Products Marketplace</h3>
+                            <p>สินค้า Affiliate จาก Shopee, Amazon, Lazada</p>
+                            <span class="new-badge">ใหม่</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- More Categories -->
+                <div class="more-categories-grid">
+                    <a href="/th/category/news" class="main-category-card">
+                        <span class="main-icon">📰</span>
+                        <h3>News</h3>
+                        <p>ข่าวสารทั้งหมด</p>
+                        <span class="count">6 หมวดหมู่ย่อย</span>
+                    </a>
+                    <a href="/th/category/advice" class="main-category-card">
+                        <span class="main-icon">💡</span>
+                        <h3>Advice</h3>
+                        <p>คำแนะนำต่างๆ</p>
+                        <span class="count">5 หมวดหมู่ย่อย</span>
+                    </a>
+                    <a href="/th/category/location" class="main-category-card">
+                        <span class="main-icon">📍</span>
+                        <h3>Location</h3>
+                        <p>สถานที่น่าสนใจ</p>
+                        <span class="count">3 หมวดหมู่ย่อย</span>
+                    </a>
+                    <a href="/th/category/money" class="main-category-card">
+                        <span class="main-icon">💸</span>
+                        <h3>How to Make Money</h3>
+                        <p>วิธีหาเงิน</p>
+                        <span class="count">6 หมวดหมู่ย่อย</span>
+                    </a>
+                    <a href="/th/category/entertainment" class="main-category-card">
+                        <span class="main-icon">📺</span>
+                        <h3>Movies, Anime & Books</h3>
+                        <p>บันเทิง</p>
+                        <span class="count">7 หมวดหมู่ย่อย</span>
+                    </a>
+                    <a href="/th/category/events" class="main-category-card">
+                        <span class="main-icon">🎶</span>
+                        <h3>Concerts & Events</h3>
+                        <p>คอนเสิร์ต & อีเว้นท์</p>
+                        <span class="count">3 หมวดหมู่ย่อย</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Categories -->
+        <section class="special-categories">
+            <div class="container">
+                <h2 class="section-title">หมวดหมู่พิเศษ</h2>
+                <div class="special-grid">
+                    <div class="special-card premium">
+                        <div class="special-header">
+                            <i class="fas fa-crown"></i>
+                            <h3>Premium Content</h3>
+                        </div>
+                        <p>เนื้อหาพิเศษสำหรับสมาชิก</p>
+                        <button class="btn-premium">
+                            <i class="fas fa-lock"></i> Unlock Premium
+                        </button>
+                    </div>
+                    <div class="special-card trending">
+                        <div class="special-header">
+                            <i class="fas fa-fire"></i>
+                            <h3>Trending Now</h3>
+                        </div>
+                        <p>หมวดหมู่ที่กำลังมาแรง</p>
+                        <button class="btn-trending">
+                            <i class="fas fa-arrow-right"></i> ดูทั้งหมด
+                        </button>
+                    </div>
+                    <div class="special-card new">
+                        <div class="special-header">
+                            <i class="fas fa-sparkles"></i>
+                            <h3>New Categories</h3>
+                        </div>
+                        <p>หมวดหมู่ใหม่ล่าสุด</p>
+                        <button class="btn-new">
+                            <i class="fas fa-plus"></i> สำรวจใหม่
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">เกี่ยวกับ BwnX</h3>
+                    <p class="footer-text">แพลตฟอร์มแนะนำการใช้ชีวิตที่ครบครันที่สุดในไทย</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">หมวดหมู่ยอดนิยม</h3>
+                    <ul class="footer-links">
+                        <li><a href="/th/category/apps">Apps & Websites</a></li>
+                        <li><a href="/th/category/channel">Channels</a></li>
+                        <li><a href="/th/category/product">Products</a></li>
+                        <li><a href="/th/category/money">How to Make Money</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">ลิงก์ด่วน</h3>
+                    <ul class="footer-links">
+                        <li><a href="/th/">หน้าแรก</a></li>
+                        <li><a href="/th/about">เกี่ยวกับเรา</a></li>
+                        <li><a href="/th/contact">ติดต่อ</a></li>
+                        <li><a href="/th/privacy">นโยบายความเป็นส่วนตัว</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">ติดต่อเรา</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-envelope"></i> contact@bwnx.co.th</li>
+                        <li><i class="fas fa-phone"></i> +66 2 123 4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Bangkok, Thailand</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 BwnX Thailand. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="/th/terms">เงื่อนไขการใช้งาน</a>
+                    <a href="/th/privacy">นโยบายความเป็นส่วนตัว</a>
+                    <a href="/th/cookies">นโยบายคุกกี้</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Additional Styles for Main Page -->
+    <style>
+        /* Main Content Styles */
+        .main-content {
+            padding-top: 80px;
+            min-height: 100vh;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: var(--spacing-md) 0;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .breadcrumb .container {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color var(--transition-base);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+        }
+        
+        .breadcrumb i {
+            color: var(--text-tertiary);
+            font-size: 0.75rem;
+        }
+        
+        /* Page Header */
+        .page-header {
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(236, 72, 153, 0.05));
+        }
+        
+        .page-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .page-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Quick Stats */
+        .quick-stats {
+            padding: var(--spacing-xl) 0;
+            background: var(--bg-primary);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .stat-card {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-lg);
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-base);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary-color);
+        }
+        
+        .stat-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Categories Sections */
+        .all-categories {
+            padding: var(--spacing-2xl) 0;
+        }
+        
+        .category-section {
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .category-header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+        
+        .category-emoji {
+            font-size: 2rem;
+        }
+        
+        .category-badge {
+            padding: var(--spacing-xs) var(--spacing-md);
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Subcategory Grid */
+        .subcategory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .subcategory-card {
+            position: relative;
+            display: block;
+            padding: var(--spacing-lg);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all var(--transition-base);
+        }
+        
+        .subcategory-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+        
+        .subcategory-card.new .new-badge {
+            position: absolute;
+            top: var(--spacing-md);
+            right: var(--spacing-md);
+            padding: 2px 8px;
+            background: var(--accent-color);
+            color: white;
+            font-size: 0.75rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+        }
+        
+        .sub-icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .subcategory-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .subcategory-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        /* More Categories Grid */
+        .more-categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .main-category-card {
+            display: block;
+            padding: var(--spacing-xl);
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            color: var(--text-primary);
+            text-align: center;
+            transition: all var(--transition-base);
+        }
+        
+        .main-category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
+        }
+        
+        .main-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .main-category-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .main-category-card p {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .main-category-card .count {
+            display: inline-block;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            background: var(--bg-primary);
+            border-radius: var(--radius-md);
+            font-size: 0.85rem;
+            color: var(--primary-color);
+        }
+        
+        /* Special Categories */
+        .special-categories {
+            padding: var(--spacing-3xl) 0;
+            background: var(--bg-secondary);
+        }
+        
+        .special-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .special-card {
+            padding: var(--spacing-xl);
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            border: 2px solid;
+            text-align: center;
+        }
+        
+        .special-card.premium {
+            border-color: #fbbf24;
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(251, 191, 36, 0.05));
+        }
+        
+        .special-card.trending {
+            border-color: #ef4444;
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+        }
+        
+        .special-card.new {
+            border-color: var(--primary-color);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(99, 102, 241, 0.05));
+        }
+        
+        .special-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .special-header i {
+            font-size: 1.5rem;
+        }
+        
+        .special-card.premium .special-header i {
+            color: #fbbf24;
+        }
+        
+        .special-card.trending .special-header i {
+            color: #ef4444;
+        }
+        
+        .special-card.new .special-header i {
+            color: var(--primary-color);
+        }
+        
+        .special-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        
+        .special-card p {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .special-card button {
+            width: 100%;
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+        
+        .btn-premium {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: white;
+            border: none;
+        }
+        
+        .btn-trending {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            border: none;
+        }
+        
+        .btn-new {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            border: none;
+        }
+        
+        /* Notification Badge */
+        .notification-btn {
+            position: relative;
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius-full);
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+        
+        .notification-badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            width: 20px;
+            height: 20px;
+            background: var(--danger-color);
+            color: white;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .user-menu {
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius-full);
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            font-size: 1.25rem;
+        }
+        
+        .user-menu:hover,
+        .notification-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        /* Sidebar Enhancements */
+        .sidebar-search {
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .sidebar-search-input {
+            width: 100%;
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            outline: none;
+            transition: all var(--transition-base);
+        }
+        
+        .sidebar-search-input:focus {
+            border-color: var(--primary-color);
+        }
+        
+        .sidebar-footer {
+            padding: var(--spacing-md);
+            border-top: 1px solid var(--border-color);
+            margin-top: auto;
+        }
+        
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm) var(--spacing-md);
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            transition: all var(--transition-base);
+        }
+        
+        .sidebar-link:hover {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .subcategory-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .special-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-header-main {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--spacing-sm);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .more-categories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>
