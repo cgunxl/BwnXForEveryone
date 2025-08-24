@@ -47,6 +47,44 @@
             overflow-x: hidden;
         }
 
+        /* Green Annotation Styles */
+        .annotation-arrow {
+            position: absolute;
+            stroke: #00ff00;
+            stroke-width: 3;
+            fill: none;
+            z-index: 1001;
+            pointer-events: none;
+        }
+
+        .annotation-text {
+            position: absolute;
+            color: #00ff00;
+            font-size: 1.2em;
+            font-weight: bold;
+            z-index: 1001;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            pointer-events: none;
+        }
+
+        .green-circle {
+            position: absolute;
+            border: 3px solid #00ff00;
+            border-radius: 50%;
+            z-index: 1001;
+            pointer-events: none;
+        }
+
+        .green-oval {
+            position: absolute;
+            border: 3px solid #00ff00;
+            border-radius: 50%;
+            z-index: 1001;
+            pointer-events: none;
+        }
+
         /* Header Styles */
         .header {
             position: fixed;
@@ -117,6 +155,7 @@
             font-size: 1.1em;
             transition: all 0.3s ease;
             border: 2px solid white;
+            position: relative;
         }
 
         .join-button:hover {
@@ -465,7 +504,7 @@
                 </nav>
             </div>
             <div class="header-right">
-                <a href="#" class="join-button">ปุ่มค้นหา</a>
+                <a href="#" class="join-button">ขยับมาอยู่ตรงนี้</a>
                 <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
                 <!-- Language Switcher moved to far right -->
                 <div class="language-switcher">
@@ -520,6 +559,56 @@
             </div>
         </div>
     </header>
+
+    <!-- Green Annotations -->
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1002;">
+        <!-- Logo circle and label -->
+        <div class="green-circle" style="width: 80px; height: 80px; top: 20px; left: 20px;"></div>
+        <div class="annotation-text" style="top: 110px; left: 10px;">ลบออก</div>
+        <svg style="position: absolute; top: 90px; left: 50px; width: 50px; height: 40px;">
+            <path d="M 10 0 L 10 30" stroke="#00ff00" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+            <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#00ff00" />
+                </marker>
+            </defs>
+        </svg>
+
+        <!-- Navigation menu oval and label -->
+        <div class="green-oval" style="width: 280px; height: 60px; top: 25px; left: 140px; transform: rotate(-5deg);"></div>
+        <div class="annotation-text" style="top: 100px; left: 200px;">ลบออก</div>
+        <svg style="position: absolute; top: 80px; left: 270px; width: 50px; height: 40px;">
+            <path d="M 10 0 L 10 20" stroke="#00ff00" stroke-width="3" fill="none" marker-end="url(#arrowhead2)"/>
+            <defs>
+                <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#00ff00" />
+                </marker>
+            </defs>
+        </svg>
+
+        <!-- Search button circle and arrow -->
+        <div class="green-oval" style="width: 180px; height: 60px; top: 20px; right: 250px; transform: rotate(5deg);"></div>
+        <svg style="position: absolute; top: 10px; right: 180px; width: 150px; height: 80px;">
+            <path d="M 140 10 Q 100 20, 60 50" stroke="#00ff00" stroke-width="3" fill="none" marker-end="url(#arrowhead3)"/>
+            <defs>
+                <marker id="arrowhead3" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#00ff00" />
+                </marker>
+            </defs>
+        </svg>
+
+        <!-- Language button circle and label -->
+        <div class="green-oval" style="width: 120px; height: 60px; top: 20px; right: 20px; transform: rotate(-10deg);"></div>
+        <div class="annotation-text" style="top: 100px; right: 20px;">ลบออก</div>
+        <svg style="position: absolute; top: 75px; right: 60px; width: 50px; height: 40px;">
+            <path d="M 25 0 L 25 25" stroke="#00ff00" stroke-width="3" fill="none" marker-end="url(#arrowhead4)"/>
+            <defs>
+                <marker id="arrowhead4" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#00ff00" />
+                </marker>
+            </defs>
+        </svg>
+    </div>
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
