@@ -373,3 +373,126 @@ body {
         font-size: 20px;
     }
 }
+
+/* Language Selector Styles */
+.language-selector {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.current-language {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.current-language:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.language-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    min-width: 200px;
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.language-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: #fff;
+    transition: background 0.2s ease;
+    cursor: pointer;
+}
+
+.language-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.language-option.active {
+    background: rgba(0, 174, 255, 0.2);
+    color: #00aeff;
+}
+
+.language-option:first-child {
+    border-radius: 12px 12px 0 0;
+}
+
+.language-option:last-child {
+    border-radius: 0 0 12px 12px;
+}
+
+.flag-icon {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* RTL Support for Arabic */
+body.rtl {
+    direction: rtl;
+}
+
+body.rtl .nav-container,
+body.rtl .nav-left,
+body.rtl .nav-right {
+    flex-direction: row-reverse;
+}
+
+body.rtl .language-dropdown {
+    right: auto;
+    left: 0;
+}
+
+body.rtl .language-option,
+body.rtl .current-language {
+    flex-direction: row-reverse;
+}
+
+body.rtl .feature-card {
+    text-align: right;
+}
+
+/* Smooth transitions for language changes */
+.nav-link,
+.btn-register,
+.hero-title,
+.hero-subtitle,
+.hero-description,
+.rating-text,
+.btn-start,
+.feature-title,
+.feature-description {
+    transition: opacity 0.2s ease;
+}
+
+/* Loading state */
+.language-loading * {
+    opacity: 0.5;
+    pointer-events: none;
+}

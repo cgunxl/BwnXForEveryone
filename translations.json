@@ -1,0 +1,292 @@
+{
+  "th": {
+    "nav": {
+      "home": "หน้าหลัก",
+      "products": "สินค้า",
+      "contact": "ติดต่อ",
+      "search": "ปุ่มค้นหา"
+    },
+    "hero": {
+      "title": "BwnX",
+      "subtitle": "เว็บไซต์แนะนำการใช้ชีวิตด้วย บทความการแนะนำ",
+      "description": "เพื่อชีวิตที่ดีของคุณ",
+      "rating": "มีผู้ใช้งานมากกว่า 1,000 คน",
+      "startButton": "เริ่มต้น"
+    },
+    "features": {
+      "finance": {
+        "title": "การเงิน",
+        "description": "คำแนะนำด้านการเงิน การลงทุน และการออม"
+      },
+      "goal": {
+        "title": "เป้าหมาย",
+        "description": "วางแผนและบรรลุเป้าหมายในชีวิต"
+      },
+      "success": {
+        "title": "ความสำเร็จ",
+        "description": "เคล็ดลับสู่ความสำเร็จในชีวิตและการงาน"
+      }
+    }
+  },
+  "en": {
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "contact": "Contact",
+      "search": "Search"
+    },
+    "hero": {
+      "title": "BwnX",
+      "subtitle": "Life guidance website with recommendation articles",
+      "description": "For your better life",
+      "rating": "More than 1,000 users",
+      "startButton": "Get Started"
+    },
+    "features": {
+      "finance": {
+        "title": "Finance",
+        "description": "Financial advice, investment and savings tips"
+      },
+      "goal": {
+        "title": "Goals",
+        "description": "Plan and achieve your life goals"
+      },
+      "success": {
+        "title": "Success",
+        "description": "Tips for success in life and work"
+      }
+    }
+  },
+  "es": {
+    "nav": {
+      "home": "Inicio",
+      "products": "Productos",
+      "contact": "Contacto",
+      "search": "Buscar"
+    },
+    "hero": {
+      "title": "BwnX",
+      "subtitle": "Sitio web de orientación de vida con artículos de recomendación",
+      "description": "Para tu mejor vida",
+      "rating": "Más de 1,000 usuarios",
+      "startButton": "Comenzar"
+    },
+    "features": {
+      "finance": {
+        "title": "Finanzas",
+        "description": "Consejos financieros, inversión y ahorro"
+      },
+      "goal": {
+        "title": "Objetivos",
+        "description": "Planifica y alcanza tus metas de vida"
+      },
+      "success": {
+        "title": "Éxito",
+        "description": "Consejos para el éxito en la vida y el trabajo"
+      }
+    }
+  },
+  "zh": {
+    "nav": {
+      "home": "首页",
+      "products": "产品",
+      "contact": "联系",
+      "search": "搜索"
+    },
+    "hero": {
+      "title": "BwnX",
+      "subtitle": "生活指导网站与推荐文章",
+      "description": "为了您更好的生活",
+      "rating": "超过1,000名用户",
+      "startButton": "开始"
+    },
+    "features": {
+      "finance": {
+        "title": "财务",
+        "description": "财务建议、投资和储蓄技巧"
+      },
+      "goal": {
+        "title": "目标",
+        "description": "规划并实现您的人生目标"
+      },
+      "success": {
+        "title": "成功",
+        "description": "生活和工作成功的技巧"
+      }
+    }
+  },
+  "ja": {
+    "nav": {
+      "home": "ホーム",
+      "products": "製品",
+      "contact": "お問い合わせ",
+      "search": "検索"
+    },
+    "hero": {
+      "title": "BwnX",
+      "subtitle": "推奨記事付きライフガイダンスウェブサイト",
+      "description": "より良い人生のために",
+      "rating": "1,000人以上のユーザー",
+      "startButton": "始める"
+    },
+    "features": {
+      "finance": {
+        "title": "ファイナンス",
+        "description": "財務アドバイス、投資と貯蓄のヒント"
+      },
+      "goal": {
+        "title": "目標",
+        "description": "人生の目標を計画し達成する"
+      },
+      "success": {
+        "title": "成功",
+        "description": "人生と仕事での成功のヒント"
+      }
+    }
+  },
+  "ko": {
+    "nav": {
+      "home": "홈",
+      "products": "제품",
+      "contact": "연락처",
+      "search": "검색"
+    },
+    "hero": {
+      "title": "BwnX",
+      "subtitle": "추천 기사가 있는 라이프 가이던스 웹사이트",
+      "description": "더 나은 삶을 위해",
+      "rating": "1,000명 이상의 사용자",
+      "startButton": "시작하기"
+    },
+    "features": {
+      "finance": {
+        "title": "금융",
+        "description": "재정 조언, 투자 및 저축 팁"
+      },
+      "goal": {
+        "title": "목표",
+        "description": "인생 목표를 계획하고 달성하세요"
+      },
+      "success": {
+        "title": "성공",
+        "description": "삶과 일에서 성공하기 위한 팁"
+      }
+    }
+  },
+  "pt": {
+    "nav": {
+      "home": "Início",
+      "products": "Produtos",
+      "contact": "Contato",
+      "search": "Pesquisar"
+    },
+    "hero": {
+      "title": "BwnX",
+      "subtitle": "Site de orientação de vida com artigos de recomendação",
+      "description": "Para sua vida melhor",
+      "rating": "Mais de 1.000 usuários",
+      "startButton": "Começar"
+    },
+    "features": {
+      "finance": {
+        "title": "Finanças",
+        "description": "Conselhos financeiros, investimento e dicas de poupança"
+      },
+      "goal": {
+        "title": "Objetivos",
+        "description": "Planeje e alcance seus objetivos de vida"
+      },
+      "success": {
+        "title": "Sucesso",
+        "description": "Dicas para o sucesso na vida e no trabalho"
+      }
+    }
+  },
+  "fr": {
+    "nav": {
+      "home": "Accueil",
+      "products": "Produits",
+      "contact": "Contact",
+      "search": "Rechercher"
+    },
+    "hero": {
+      "title": "BwnX",
+      "subtitle": "Site web d'orientation de vie avec articles de recommandation",
+      "description": "Pour votre meilleure vie",
+      "rating": "Plus de 1 000 utilisateurs",
+      "startButton": "Commencer"
+    },
+    "features": {
+      "finance": {
+        "title": "Finance",
+        "description": "Conseils financiers, investissement et épargne"
+      },
+      "goal": {
+        "title": "Objectifs",
+        "description": "Planifiez et atteignez vos objectifs de vie"
+      },
+      "success": {
+        "title": "Succès",
+        "description": "Conseils pour réussir dans la vie et au travail"
+      }
+    }
+  },
+  "de": {
+    "nav": {
+      "home": "Startseite",
+      "products": "Produkte",
+      "contact": "Kontakt",
+      "search": "Suchen"
+    },
+    "hero": {
+      "title": "BwnX",
+      "subtitle": "Lebensberatungs-Website mit Empfehlungsartikeln",
+      "description": "Für Ihr besseres Leben",
+      "rating": "Mehr als 1.000 Benutzer",
+      "startButton": "Loslegen"
+    },
+    "features": {
+      "finance": {
+        "title": "Finanzen",
+        "description": "Finanzberatung, Investitions- und Spartipps"
+      },
+      "goal": {
+        "title": "Ziele",
+        "description": "Planen und erreichen Sie Ihre Lebensziele"
+      },
+      "success": {
+        "title": "Erfolg",
+        "description": "Tipps für Erfolg im Leben und bei der Arbeit"
+      }
+    }
+  },
+  "ar": {
+    "nav": {
+      "home": "الرئيسية",
+      "products": "المنتجات",
+      "contact": "اتصل",
+      "search": "بحث"
+    },
+    "hero": {
+      "title": "BwnX",
+      "subtitle": "موقع إرشاد الحياة مع مقالات التوصية",
+      "description": "من أجل حياة أفضل",
+      "rating": "أكثر من 1000 مستخدم",
+      "startButton": "ابدأ"
+    },
+    "features": {
+      "finance": {
+        "title": "المالية",
+        "description": "نصائح مالية واستثمارية وادخارية"
+      },
+      "goal": {
+        "title": "الأهداف",
+        "description": "خطط وحقق أهداف حياتك"
+      },
+      "success": {
+        "title": "النجاح",
+        "description": "نصائح للنجاح في الحياة والعمل"
+      }
+    }
+  }
+}
