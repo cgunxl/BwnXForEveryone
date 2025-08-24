@@ -1,6 +1,9 @@
 'use client'
 
 import { TrackedLink } from './TrackedLink'
+import { CategoriesList } from './CategoriesList'
+import { usePathname } from 'next/navigation'
+import { isLocale, type Locale, localizedPath } from '@/content/locales'
 
 interface SlideMenuProps {
   isOpen: boolean
@@ -8,6 +11,9 @@ interface SlideMenuProps {
 }
 
 export function SlideMenu({ isOpen, onClose }: SlideMenuProps) {
+  const pathname = usePathname()
+  const locale: Locale = (isLocale(pathname?.split('/').filter(Boolean)[0]) ? pathname?.split('/').filter(Boolean)[0] : 'th') as Locale
+
   return (
     <>
       {/* Backdrop */}
@@ -43,57 +49,22 @@ export function SlideMenu({ isOpen, onClose }: SlideMenuProps) {
           {/* Menu Content */}
           <div className="flex-1 p-6 overflow-y-auto">
             <div className="space-y-4">
-              {/* Development Status - Prominent */}
-              <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/40 rounded-xl p-4 shadow-lg">
-                <div className="flex items-center space-x-3 mb-2">
-                  <div className="w-4 h-4 bg-yellow-500 rounded-full animate-pulse shadow-lg"></div>
-                  <span className="text-yellow-300 font-bold text-lg">กำลังพัฒนา</span>
-                </div>
-                <p className="text-white/80 text-sm leading-relaxed">
-                  ระบบกำลังอยู่ในขั้นตอนการพัฒนา กรุณารอสักครู่ ขอบคุณที่ให้ความสนใจ
-                </p>
-                <div className="mt-3 flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-yellow-500 rounded-full animate-bounce"></div>
-                  <div className="w-2 h-2 bg-yellow-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                  <div className="w-2 h-2 bg-yellow-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                </div>
-              </div>
-              
               {/* Navigation Links */}
               <div className="space-y-2">
                 <TrackedLink
-                  href="/dashboard"
-                  eventName="menu_dashboard_click"
+                  href={localizedPath(locale, 'main')}
+                  eventName="menu_main_click"
                   className="block p-3 rounded-lg hover:bg-white/10 transition-all duration-200 text-white/80 hover:text-white hover:scale-105 border border-transparent hover:border-white/20"
                 >
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    <span>แดชบอร์ด</span>
-                  </div>
-                </TrackedLink>
-                
-                <TrackedLink
-                  href="/analytics"
-                  eventName="menu_analytics_click"
-                  className="block p-3 rounded-lg hover:bg-white/10 transition-all duration-200 text-white/80 hover:text-white hover:scale-105 border border-transparent hover:border-white/20"
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                    <span>การวิเคราะห์</span>
-                  </div>
-                </TrackedLink>
-                
-                <TrackedLink
-                  href="/settings"
-                  eventName="menu_settings_click"
-                  className="block p-3 rounded-lg hover:bg-white/10 transition-all duration-200 text-white/80 hover:text-white hover:scale-105 border border-transparent hover:border-white/20"
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                    <span>การตั้งค่า</span>
+                    <span>{locale === 'th' ? 'หมวดหมู่ทั้งหมด' : 'All Categories'}</span>
                   </div>
                 </TrackedLink>
               </div>
+
+              {/* Category listing */}
+              <CategoriesList />
             </div>
           </div>
         </div>

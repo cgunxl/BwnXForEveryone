@@ -54,15 +54,15 @@ export function Header({ onMenuToggle }: HeaderProps) {
         {/* Right: Language switcher */}
         <div className="ml-auto flex items-center gap-3">
           <div className="hidden md:flex items-center gap-2 text-white/80">
-            <TrackedLink href="/th/" eventName="lang_th_click" className="hover:text-white text-xs">TH</TrackedLink>
-            <TrackedLink href="/en/" eventName="lang_en_click" className="hover:text-white text-xs">EN</TrackedLink>
-            <TrackedLink href="/ja/" eventName="lang_ja_click" className="hover:text-white text-xs">JA</TrackedLink>
-            <TrackedLink href="/zh/" eventName="lang_zh_click" className="hover:text-white text-xs">ZH</TrackedLink>
-            <TrackedLink href="/es/" eventName="lang_es_click" className="hover:text-white text-xs">ES</TrackedLink>
-            <TrackedLink href="/pt/" eventName="lang_pt_click" className="hover:text-white text-xs">PT</TrackedLink>
-            <TrackedLink href="/fr/" eventName="lang_fr_click" className="hover:text-white text-xs">FR</TrackedLink>
-            <TrackedLink href="/de/" eventName="lang_de_click" className="hover:text-white text-xs">DE</TrackedLink>
-            <TrackedLink href="/ar/" eventName="lang_ar_click" className="hover:text-white text-xs">AR</TrackedLink>
+            <TrackedLink href="/th/main/" eventName="lang_th_click" className="hover:text-white text-xs">TH</TrackedLink>
+            <TrackedLink href="/en/main/" eventName="lang_en_click" className="hover:text-white text-xs">EN</TrackedLink>
+            <TrackedLink href="/ja/main/" eventName="lang_ja_click" className="hover:text-white text-xs">JA</TrackedLink>
+            <TrackedLink href="/zh/main/" eventName="lang_zh_click" className="hover:text-white text-xs">ZH</TrackedLink>
+            <TrackedLink href="/es/main/" eventName="lang_es_click" className="hover:text-white text-xs">ES</TrackedLink>
+            <TrackedLink href="/pt/main/" eventName="lang_pt_click" className="hover:text-white text-xs">PT</TrackedLink>
+            <TrackedLink href="/fr/main/" eventName="lang_fr_click" className="hover:text-white text-xs">FR</TrackedLink>
+            <TrackedLink href="/de/main/" eventName="lang_de_click" className="hover:text-white text-xs">DE</TrackedLink>
+            <TrackedLink href="/ar/main/" eventName="lang_ar_click" className="hover:text-white text-xs">AR</TrackedLink>
           </div>
         </div>
       </div>
