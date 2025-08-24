@@ -58,8 +58,14 @@ export function TrackedLink({ href, eventName, children, className, onClick, loc
     }
   }
 
+  const extraProps: Record<string, never> = {}
+  if (eventName.startsWith('click_out')) {
+    ;(extraProps as unknown as Record<string, string>)['data-partner'] = partner || 'unknown'
+    ;(extraProps as unknown as Record<string, string>)['data-link-id'] = linkId || href
+  }
+
   return (
-    <Link href={href} className={className} onClick={handleClick} locale={locale} aria-label={ariaLabel} prefetch={prefetch}>
+    <Link href={href} className={className} onClick={handleClick} locale={locale} aria-label={ariaLabel} prefetch={prefetch} {...extraProps}>
       {children}
     </Link>
   )

@@ -28,6 +28,7 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  metadataBase: new URL('https://cgunxl.github.io/BwnXForEveryone'),
 }
 
 export default function RootLayout({

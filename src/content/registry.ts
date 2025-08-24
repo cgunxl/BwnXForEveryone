@@ -14,6 +14,8 @@ export type CategoryKey =
   | 'food'
   | 'real-estate'
   | 'jobs-abroad'
+  | 'concerts'
+  | 'finance-events'
 
 export interface ContentItem {
   slug: string

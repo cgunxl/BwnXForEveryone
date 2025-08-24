@@ -46,7 +46,8 @@ export function generateMetadata({ params }: Props): Metadata {
   }
 }
 
-export default function LocaleLayout({ children }: Props) {
+export default async function LocaleLayout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
+  // We do not need to await params here for rendering wrapper
   return (
     <>
       <ClientWrapper />
