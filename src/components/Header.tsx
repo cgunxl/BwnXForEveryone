@@ -34,7 +34,7 @@ export function Header({ onMenuToggle }: HeaderProps) {
         <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6 text-white/80">
           <TrackedLink href="/" eventName="nav_home_click" className="hover:text-white transition-colors">หน้าหลัก</TrackedLink>
           <TrackedLink href="/products" eventName="nav_products_click" className="hover:text-white transition-colors">สินค้า</TrackedLink>
-          <TrackedLink href="/contact" eventName="nav_contact_click" className="hover:text-white transition-colors">ติดต่อ</TrackedLink>
+          <TrackedLink href="/Contact" eventName="nav_contact_click" className="hover:text-white transition-colors">ติดต่อ</TrackedLink>
         </nav>
 
         {/* Center wide search bar for md+ screens */}
