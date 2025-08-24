@@ -86,7 +86,7 @@
             gap: 30px;
             align-items: center;
             flex: 1;
-            margin-left: 50px;
+            margin-left: 20px;
         }
 
         .nav-item {
@@ -457,7 +457,7 @@
     <header class="header">
         <div class="header-content">
             <div class="logo-section">
-                <a href="#" class="logo-text">โลโก้ BwnX</a>
+                <a href="#"><img src="Logoserver1.png" alt="BwnX Logo" class="logo-img"></a>
                 <nav class="nav-menu">
                     <a href="#" class="nav-item">หน้าหลัก</a>
                     <a href="#products" class="nav-item">สินค้า</a>
@@ -465,7 +465,9 @@
                 </nav>
             </div>
             <div class="header-right">
-                <!-- Language Switcher -->
+                <a href="#" class="join-button">ปุ่มค้นหา</a>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+                <!-- Language Switcher moved to far right -->
                 <div class="language-switcher">
                     <button class="language-btn" onclick="toggleLanguageDropdown()">
                         <img src="https://flagcdn.com/w40/th.png" alt="TH" class="flag-icon" id="currentFlag">
@@ -515,9 +517,6 @@
                         </a>
                     </div>
                 </div>
-                <a href="#" class="join-button">ปุ่มค้นหา</a>
-                <img src="https://raw.githubusercontent.com/cgunxl/BwnXForEveryone/main/Logoserver1.png" alt="BwnX Logo" class="logo-img">
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
             </div>
         </div>
     </header>
