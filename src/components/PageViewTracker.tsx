@@ -19,7 +19,8 @@ export function PageViewTracker() {
 				page_path: pathname,
 				page_title: document.title,
 				page_location: window.location.href,
-				page_category: getPageCategory(pathname)
+				page_category: getPageCategory(pathname),
+				transport_type: 'beacon',
 			})
 			
 			// Send custom page_view event
@@ -31,7 +32,8 @@ export function PageViewTracker() {
 				locale: (navigator.language || 'th-TH').split('-')[0],
 				country: (navigator.language || 'th-TH').split('-').pop(),
 				event_category: 'navigation',
-				event_label: pathname
+				event_label: pathname,
+				transport_type: 'beacon',
 			})
 			
 			// Track user session

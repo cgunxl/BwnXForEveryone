@@ -27,7 +27,9 @@ export function generateMetadata({ params }: Props): Metadata {
       default: 'BwnX Platform',
       template: '%s | BwnX',
     },
+    metadataBase: new URL('https://cgunxl.github.io/BwnXForEveryone'),
     alternates: {
+      canonical: `https://cgunxl.github.io/BwnXForEveryone/${locale}/`,
       languages: {
         th: `/th/`,
         en: `/en/`,
@@ -38,7 +40,14 @@ export function generateMetadata({ params }: Props): Metadata {
         fr: `/fr/`,
         de: `/de/`,
         ar: `/ar/`,
+        'x-default': `/en/`,
       },
+    },
+    openGraph: {
+      type: 'website',
+      locale: locale === 'th' ? 'th_TH' : locale + '_' + locale.toUpperCase(),
+      url: `https://cgunxl.github.io/BwnXForEveryone/${locale}/`,
+      siteName: 'BwnX Platform',
     },
     other: {
       locale,

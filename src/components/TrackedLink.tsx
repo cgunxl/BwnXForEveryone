@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ReactNode } from 'react'
+import { ReactNode, MouseEvent } from 'react'
 
 interface TrackedLinkProps {
   href: string
@@ -17,7 +17,7 @@ interface TrackedLinkProps {
 }
 
 export function TrackedLink({ href, eventName, children, className, onClick, locale, ariaLabel, prefetch, partner, linkId }: TrackedLinkProps) {
-  const handleClick = () => {
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
     // Track click event with GA4
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'click', {
@@ -32,15 +32,20 @@ export function TrackedLink({ href, eventName, children, className, onClick, loc
         value: 1,
         // Custom parameters
         custom_parameter_1: eventName,
-        custom_parameter_2: 'user_interaction'
+        custom_parameter_2: 'user_interaction',
+        transport_type: 'beacon',
       })
       
       if (eventName.startsWith('click_out')) {
-        window.gtag('event', 'click_out', {
+        // Send click_out with beacon-friendly transport
+        const payload = {
+          event: 'click_out',
           partner: partner || 'unknown',
           link_id: linkId || href,
           country: (navigator.language || 'th-TH').split('-').pop(),
-        })
+          transport_type: 'beacon',
+        }
+        window.gtag('event', 'click_out', payload)
       }
       
       // Track user engagement
@@ -48,7 +53,8 @@ export function TrackedLink({ href, eventName, children, className, onClick, loc
         event_category: 'engagement',
         event_label: eventName,
         engagement_time_msec: 1000,
-        session_id: sessionStorage.getItem('ga_session_id') || 'unknown'
+        session_id: sessionStorage.getItem('ga_session_id') || 'unknown',
+        transport_type: 'beacon',
       })
     }
     
@@ -56,6 +62,12 @@ export function TrackedLink({ href, eventName, children, className, onClick, loc
     if (onClick) {
       onClick()
     }
+
+    // Force hard reload navigation after a very short delay to allow beacon dispatch
+    e.preventDefault()
+    setTimeout(() => {
+      window.location.assign(href)
+    }, 80)
   }
 
   const extraProps: Record<string, never> = {}
@@ -65,7 +77,7 @@ export function TrackedLink({ href, eventName, children, className, onClick, loc
   }
 
   return (
-    <Link href={href} className={className} onClick={handleClick} locale={locale} aria-label={ariaLabel} prefetch={prefetch} {...extraProps}>
+    <Link href={href} className={className} onClick={handleClick} locale={locale} aria-label={ariaLabel} prefetch={false} {...extraProps}>
       {children}
     </Link>
   )

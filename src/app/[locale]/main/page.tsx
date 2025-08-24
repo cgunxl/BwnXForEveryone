@@ -11,7 +11,9 @@ export function generateMetadata({ params }: Props): Metadata {
 	const locale = (isLocale(params.locale) ? params.locale : 'th') as Locale
 	return {
 		title: locale === 'th' ? 'หมวดหมู่' : 'Categories',
+		metadataBase: new URL('https://cgunxl.github.io/BwnXForEveryone'),
 		alternates: {
+			canonical: `https://cgunxl.github.io/BwnXForEveryone/${locale}/main/`,
 			languages: {
 				th: localizedPath('th', 'main'),
 				en: localizedPath('en', 'main'),

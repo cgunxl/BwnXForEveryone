@@ -24,6 +24,7 @@ export function GoogleAnalytics() {
             send_page_view: true,
             anonymize_ip: true,
             cookie_flags: 'SameSite=None;Secure',
+            transport_type: 'beacon',
             // Enhanced ecommerce tracking
             allow_enhanced_conversions: true,
             // Custom dimensions for better tracking
@@ -37,7 +38,8 @@ export function GoogleAnalytics() {
           gtag('event', 'page_view', {
             page_title: document.title,
             page_location: window.location.href,
-            page_category: 'main'
+            page_category: 'main',
+            transport_type: 'beacon'
           });
           
           // Track user interaction events
@@ -47,7 +49,8 @@ export function GoogleAnalytics() {
               gtag('event', 'click', {
                 event_category: 'engagement',
                 event_label: target.textContent || target.innerText || 'unknown',
-                value: 1
+                value: 1,
+                transport_type: 'beacon'
               });
             }
           });

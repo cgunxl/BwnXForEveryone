@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { isLocale, type Locale, localizedPath } from '@/content/locales'
 import { getCategoryByKey, getSubcategoryLabel } from '@/content/categories'
 import type { CategoryKey } from '@/content/registry'
+import { getAllCategories } from '@/content/categories'
 import { TrackedLink } from '@/components/TrackedLink'
 
 export const dynamic = 'force-static'
@@ -10,7 +11,7 @@ export const revalidate = 300
 interface Props { params: { locale: string; category: CategoryKey } }
 
 export async function generateStaticParams() {
-	const cats: CategoryKey[] = ['apps','channel','fanpage','product','news','advice','location','make-money','movies','education','food','real-estate','jobs-abroad']
+	const cats = getAllCategories().map((c) => c.key) as CategoryKey[]
 	const locales: Locale[] = ['th','en','ja','zh','es','pt','fr','de','ar']
 	return cats.flatMap((c) => locales.map((l) => ({ locale: l, category: c })))
 }
@@ -21,7 +22,9 @@ export function generateMetadata({ params }: Props): Metadata {
 	const title = cat ? `${cat.emoji} ${(cat.label[locale] || cat.label.th || cat.label.en)}` : 'Category'
 	return {
 		title,
+		metadataBase: new URL('https://cgunxl.github.io/BwnXForEveryone'),
 		alternates: {
+			canonical: `https://cgunxl.github.io/BwnXForEveryone/${locale}/c/${params.category}/`,
 			languages: {
 				th: localizedPath('th', 'c', params.category),
 				en: localizedPath('en', 'c', params.category),

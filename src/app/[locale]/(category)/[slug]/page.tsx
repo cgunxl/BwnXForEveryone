@@ -22,7 +22,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	return {
 		title: item.title,
 		description: item.summary,
+		metadataBase: new URL('https://cgunxl.github.io/BwnXForEveryone'),
 		alternates: {
+			canonical: `https://cgunxl.github.io/BwnXForEveryone/${locale}/${item.slug}/`,
 			languages: {
 				th: localizedPath('th', item.slug),
 				en: localizedPath('en', item.slug),
@@ -76,4 +78,3 @@ export default async function ContentPage({ params }: Props) {
 		</main>
 	)
 }
-
