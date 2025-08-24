@@ -3,731 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BwnX - Platform แนะนำสิ่งที่ดีที่สุดในการใช้ชีวิต</title>
-    <meta name="description" content="BwnX - Platform การให้คำแนะนำสิ่งที่คุณต้องการที่ดีที่สุดในการใช้ชีวิต หาเงิน และไลฟ์สไตล์">
-    
-    <!-- Google Site Verification -->
-    <meta name="google-site-verification" content="X8vvOgzWB2UFcwWtd04rBJbmF6SjF2btzESxiJhY2Oc" />
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-    
-    <!-- Alternate language links for SEO -->
-    <link rel="alternate" hreflang="en" href="https://cgunxl.github.io/BwnXForEveryone/en/" />
-    <link rel="alternate" hreflang="es" href="https://cgunxl.github.io/BwnXForEveryone/es/" />
-    <link rel="alternate" hreflang="pt" href="https://cgunxl.github.io/BwnXForEveryone/pt/" />
-    <link rel="alternate" hreflang="de" href="https://cgunxl.github.io/BwnXForEveryone/de/" />
-    <link rel="alternate" hreflang="fr" href="https://cgunxl.github.io/BwnXForEveryone/fr/" />
-    <link rel="alternate" hreflang="ja" href="https://cgunxl.github.io/BwnXForEveryone/ja/" />
-    <link rel="alternate" hreflang="ko" href="https://cgunxl.github.io/BwnXForEveryone/ko/" />
-    <link rel="alternate" hreflang="zh" href="https://cgunxl.github.io/BwnXForEveryone/zh/" />
-    <link rel="alternate" hreflang="ar" href="https://cgunxl.github.io/BwnXForEveryone/ar/" />
-    <link rel="alternate" hreflang="th" href="https://cgunxl.github.io/BwnXForEveryone/th/" />
-    <link rel="alternate" hreflang="x-default" href="https://cgunxl.github.io/BwnXForEveryone/en/" />
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Sarabun', sans-serif;
-            background: #000000;
-            min-height: 100vh;
-            color: white;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        /* Green Annotation Styles */
-        .annotation-arrow {
-            position: absolute;
-            stroke: #00ff00;
-            stroke-width: 3;
-            fill: none;
-            z-index: 1001;
-            pointer-events: none;
-        }
-
-        .annotation-text {
-            position: absolute;
-            color: #00ff00;
-            font-size: 1.2em;
-            font-weight: bold;
-            z-index: 1001;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 5px 10px;
-            border-radius: 5px;
-            pointer-events: none;
-        }
-
-        .green-circle {
-            position: absolute;
-            border: 3px solid #00ff00;
-            border-radius: 50%;
-            z-index: 1001;
-            pointer-events: none;
-        }
-
-        .green-oval {
-            position: absolute;
-            border: 3px solid #00ff00;
-            border-radius: 50%;
-            z-index: 1001;
-            pointer-events: none;
-        }
-
-        /* Header Styles */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            z-index: 1000;
-            padding: 15px 30px;
-        }
-
-        .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-text {
-            font-size: 2em;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-            flex: 1;
-            margin-left: 20px;
-        }
-
-        .nav-item {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1em;
-            transition: color 0.3s ease;
-            cursor: pointer;
-        }
-
-        .nav-item:hover {
-            color: #888;
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .join-button {
-            background: white;
-            color: black;
-            padding: 10px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-            border: 2px solid white;
-            position: relative;
-        }
-
-        .join-button:hover {
-            background: transparent;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .logo-img {
-            height: 50px;
-            width: auto;
-            object-fit: contain;
-        }
-        
-        /* Language Switcher Styles */
-        .language-switcher {
-            position: relative;
-        }
-        
-        .language-btn {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
-            padding: 8px 16px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            color: white;
-            font-size: 14px;
-        }
-        
-        .language-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.05);
-        }
-        
-        .flag-icon {
-            width: 24px;
-            height: 18px;
-            border-radius: 2px;
-            object-fit: cover;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-        
-        .language-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            margin-top: 10px;
-            background: rgba(20, 20, 20, 0.95);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 8px;
-            min-width: 200px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-        
-        .language-dropdown.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
-        .language-option {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 12px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            color: white;
-            text-decoration: none;
-        }
-        
-        .language-option:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .language-option.active {
-            background: rgba(255, 255, 255, 0.15);
-        }
-        
-        .language-name {
-            flex: 1;
-            font-size: 14px;
-        }
-
-        /* Main Content */
-        .main-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 120px 20px 40px;
-        }
-        
-        .container {
-            text-align: center;
-            max-width: 900px;
-            width: 100%;
-            position: relative;
-        }
-
-        /* Mountain/Wave Background Effect */
-        .mountain-bg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 400px;
-            background: linear-gradient(180deg, transparent 0%, rgba(30, 30, 30, 0.3) 100%);
-            clip-path: polygon(0 40%, 10% 35%, 20% 42%, 30% 38%, 40% 45%, 50% 40%, 60% 48%, 70% 43%, 80% 50%, 90% 45%, 100% 52%, 100% 100%, 0 100%);
-            z-index: -1;
-        }
-        
-        h1 {
-            font-size: 5em;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            animation: fadeInUp 1s ease-out;
-            letter-spacing: 2px;
-        }
-        
-        .subtitle {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            opacity: 0.95;
-            animation: fadeInUp 1s ease-out 0.2s;
-            animation-fill-mode: both;
-        }
-        
-        .description {
-            font-size: 1.3em;
-            line-height: 1.6;
-            opacity: 0.9;
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease-out 0.4s;
-            animation-fill-mode: both;
-        }
-
-        .member-info {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-            animation: fadeInUp 1s ease-out 0.5s;
-            animation-fill-mode: both;
-        }
-
-        .member-count {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-
-        .stars {
-            display: flex;
-            gap: 5px;
-            color: #FFD700;
-            font-size: 1.5em;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 15px 50px;
-            background: white;
-            color: black;
-            text-decoration: none;
-            border-radius: 35px;
-            font-size: 1.3em;
-            font-weight: bold;
-            border: 3px solid white;
-            transition: all 0.3s ease;
-            animation: fadeInUp 1s ease-out 0.6s;
-            animation-fill-mode: both;
-            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-            margin-top: 20px;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
-            background: transparent;
-            color: white;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 80px;
-            animation: fadeInUp 1s ease-out 0.8s;
-            animation-fill-mode: both;
-        }
-        
-        .feature {
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-        
-        .feature:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
-        }
-        
-        .feature-icon {
-            font-size: 3em;
-            margin-bottom: 15px;
-        }
-        
-        .feature-title {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            color: white;
-            font-weight: bold;
-        }
-        
-        .feature-description {
-            opacity: 0.8;
-            line-height: 1.6;
-            font-size: 1.1em;
-        }
-
-        /* Mobile Menu Button */
-        .mobile-menu-btn {
-            display: none;
-            background: transparent;
-            border: none;
-            color: white;
-            font-size: 1.5em;
-            cursor: pointer;
-        }
-
-        /* Mobile Menu */
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.98);
-            backdrop-filter: blur(20px);
-            padding: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            z-index: 999;
-        }
-
-        .mobile-menu.show {
-            display: block;
-        }
-
-        .mobile-menu .nav-item {
-            display: block;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        @media (max-width: 768px) {
-            .header {
-                padding: 10px 15px;
-            }
-
-            .logo-text {
-                font-size: 1.5em;
-            }
-
-            .nav-menu {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .logo-img {
-                height: 40px;
-            }
-
-            .join-button {
-                padding: 8px 20px;
-                font-size: 0.9em;
-            }
-
-            h1 {
-                font-size: 3em;
-            }
-            
-            .subtitle {
-                font-size: 1.3em;
-            }
-
-            .description {
-                font-size: 1.1em;
-            }
-            
-            .container {
-                padding: 30px 20px;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-                margin-top: 50px;
-            }
-
-            .main-content {
-                padding: 100px 20px 40px;
-            }
-        }
-    </style>
+    <title>BwnX - เว็บไซต์แนะนำการใช้ชีวิตด้วย บทความการแนะนำ</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-content">
-            <div class="logo-section">
-                <a href="#"><img src="Logoserver1.png" alt="BwnX Logo" class="logo-img"></a>
-                <nav class="nav-menu">
-                    <a href="#" class="nav-item">หน้าหลัก</a>
-                    <a href="#products" class="nav-item">สินค้า</a>
-                    <a href="#contact" class="nav-item">ติดต่อ</a>
-                </nav>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" stroke="white" stroke-width="2"/>
+                        <path d="M15 15 L25 25 M25 15 L15 25" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <a href="#" class="nav-link">หน้าหลัก</a>
+                <a href="#" class="nav-link">สินค้า</a>
+                <a href="#" class="nav-link">ติดต่อ</a>
             </div>
-            <div class="header-right">
-                <a href="#" class="join-button">ขยับมาอยู่ตรงนี้</a>
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
-                <!-- Language Switcher moved to far right -->
-                <div class="language-switcher">
-                    <button class="language-btn" onclick="toggleLanguageDropdown()">
-                        <img src="https://flagcdn.com/w40/th.png" alt="TH" class="flag-icon" id="currentFlag">
-                        <span id="currentLangCode">TH</span>
-                        <span style="font-size: 12px;">▼</span>
-                    </button>
-                    <div class="language-dropdown" id="languageDropdown">
-                        <a href="https://cgunxl.github.io/BwnXForEveryone/en/" class="language-option">
-                            <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag-icon">
-                            <span class="language-name">English</span>
-                        </a>
-                        <a href="https://cgunxl.github.io/BwnXForEveryone/es/" class="language-option">
-                            <img src="https://flagcdn.com/w40/es.png" alt="ES" class="flag-icon">
-                            <span class="language-name">Español</span>
-                        </a>
-                        <a href="https://cgunxl.github.io/BwnXForEveryone/pt/" class="language-option">
-                            <img src="https://flagcdn.com/w40/br.png" alt="PT" class="flag-icon">
-                            <span class="language-name">Português</span>
-                        </a>
-                        <a href="https://cgunxl.github.io/BwnXForEveryone/de/" class="language-option">
-                            <img src="https://flagcdn.com/w40/de.png" alt="DE" class="flag-icon">
-                            <span class="language-name">Deutsch</span>
-                        </a>
-                        <a href="https://cgunxl.github.io/BwnXForEveryone/fr/" class="language-option">
-                            <img src="https://flagcdn.com/w40/fr.png" alt="FR" class="flag-icon">
-                            <span class="language-name">Français</span>
-                        </a>
-                        <a href="https://cgunxl.github.io/BwnXForEveryone/ja/" class="language-option">
-                            <img src="https://flagcdn.com/w40/jp.png" alt="JA" class="flag-icon">
-                            <span class="language-name">日本語</span>
-                        </a>
-                        <a href="https://cgunxl.github.io/BwnXForEveryone/ko/" class="language-option">
-                            <img src="https://flagcdn.com/w40/kr.png" alt="KO" class="flag-icon">
-                            <span class="language-name">한국어</span>
-                        </a>
-                        <a href="https://cgunxl.github.io/BwnXForEveryone/zh/" class="language-option">
-                            <img src="https://flagcdn.com/w40/cn.png" alt="ZH" class="flag-icon">
-                            <span class="language-name">中文</span>
-                        </a>
-                        <a href="https://cgunxl.github.io/BwnXForEveryone/ar/" class="language-option">
-                            <img src="https://flagcdn.com/w40/sa.png" alt="AR" class="flag-icon">
-                            <span class="language-name">العربية</span>
-                        </a>
-                        <a href="https://cgunxl.github.io/BwnXForEveryone/th/" class="language-option active">
-                            <img src="https://flagcdn.com/w40/th.png" alt="TH" class="flag-icon">
-                            <span class="language-name">ไทย</span>
-                        </a>
-                    </div>
+            <div class="nav-right">
+                <button class="btn-register">ปุ่มค้นหา</button>
+                <div class="language-selector">
+                    <img src="https://flagcdn.com/w20/th.png" alt="TH" class="flag-icon">
+                    <span>TH</span>
+                    <svg width="12" height="8" viewBox="0 0 12 8" fill="white">
+                        <path d="M1 1L6 6L11 1" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
                 </div>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Green Annotations -->
-    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1002;">
-        <!-- Logo circle and label -->
-        <div class="green-circle" style="width: 80px; height: 80px; top: 20px; left: 20px;"></div>
-        <div class="annotation-text" style="top: 110px; left: 10px;">ลบออก</div>
-        <svg style="position: absolute; top: 90px; left: 50px; width: 50px; height: 40px;">
-            <path d="M 10 0 L 10 30" stroke="#00ff00" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
-            <defs>
-                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
-                    <polygon points="0 0, 10 3.5, 0 7" fill="#00ff00" />
-                </marker>
-            </defs>
-        </svg>
-
-        <!-- Navigation menu oval and label -->
-        <div class="green-oval" style="width: 280px; height: 60px; top: 25px; left: 140px; transform: rotate(-5deg);"></div>
-        <div class="annotation-text" style="top: 100px; left: 200px;">ลบออก</div>
-        <svg style="position: absolute; top: 80px; left: 270px; width: 50px; height: 40px;">
-            <path d="M 10 0 L 10 20" stroke="#00ff00" stroke-width="3" fill="none" marker-end="url(#arrowhead2)"/>
-            <defs>
-                <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
-                    <polygon points="0 0, 10 3.5, 0 7" fill="#00ff00" />
-                </marker>
-            </defs>
-        </svg>
-
-        <!-- Search button circle and arrow -->
-        <div class="green-oval" style="width: 180px; height: 60px; top: 20px; right: 250px; transform: rotate(5deg);"></div>
-        <svg style="position: absolute; top: 10px; right: 180px; width: 150px; height: 80px;">
-            <path d="M 140 10 Q 100 20, 60 50" stroke="#00ff00" stroke-width="3" fill="none" marker-end="url(#arrowhead3)"/>
-            <defs>
-                <marker id="arrowhead3" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
-                    <polygon points="0 0, 10 3.5, 0 7" fill="#00ff00" />
-                </marker>
-            </defs>
-        </svg>
-
-        <!-- Language button circle and label -->
-        <div class="green-oval" style="width: 120px; height: 60px; top: 20px; right: 20px; transform: rotate(-10deg);"></div>
-        <div class="annotation-text" style="top: 100px; right: 20px;">ลบออก</div>
-        <svg style="position: absolute; top: 75px; right: 60px; width: 50px; height: 40px;">
-            <path d="M 25 0 L 25 25" stroke="#00ff00" stroke-width="3" fill="none" marker-end="url(#arrowhead4)"/>
-            <defs>
-                <marker id="arrowhead4" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
-                    <polygon points="0 0, 10 3.5, 0 7" fill="#00ff00" />
-                </marker>
-            </defs>
-        </svg>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#" class="nav-item">หน้าหลัก</a>
-        <a href="#products" class="nav-item">สินค้า</a>
-        <a href="#contact" class="nav-item">ติดต่อ</a>
-    </div>
-
-    <!-- Main Content -->
-    <div class="main-content">
-        <div class="container">
-            <div class="mountain-bg"></div>
-            <h1>BwnX</h1>
-            <p class="subtitle">เว็บไซต์แนะนำการใช้ชีวิตด้วย บทความการแนะนำ</p>
-            <p class="description">เพื่อชีวิตที่ดีของคุณ</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">BwnX</h1>
+            <p class="hero-subtitle">เว็บไซต์แนะนำการใช้ชีวิตด้วย บทความการแนะนำ</p>
+            <p class="hero-description">เพื่อชีวิตที่ดีของคุณ</p>
             
-            <div class="member-info">
-                <span class="member-count">มีผู้ใช้งานมากกว่า 1,000 คน</span>
+            <div class="rating-section">
+                <p class="rating-text">มีผู้ใช้งานมากกว่า 1,000 คน</p>
                 <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
+                    <span class="star">⭐</span>
+                    <span class="star">⭐</span>
+                    <span class="star">⭐</span>
+                    <span class="star">⭐</span>
+                    <span class="star">⭐</span>
                 </div>
             </div>
-
-            <a href="#" class="cta-button">เริ่มต้น</a>
             
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">💰</div>
-                    <div class="feature-title">การเงิน</div>
-                    <div class="feature-description">เคล็ดลับการบริหารเงินและการลงทุนที่เหมาะกับคุณ</div>
+            <button class="btn-start">เริ่มต้น</button>
+        </div>
+    </section>
+
+    <!-- Feature Cards Section -->
+    <section class="features">
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-icon money">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                        <circle cx="30" cy="30" r="25" fill="#FFD700"/>
+                        <text x="30" y="38" text-anchor="middle" fill="#333" font-size="24" font-weight="bold">$</text>
+                    </svg>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">🎯</div>
-                    <div class="feature-title">เป้าหมาย</div>
-                    <div class="feature-description">วางแผนและบรรลุเป้าหมายในชีวิตอย่างมีประสิทธิภาพ</div>
+                <h3 class="feature-title">การเงิน</h3>
+                <p class="feature-description">คำแนะนำด้านการเงิน การลงทุน และการออม</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon target">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                        <circle cx="30" cy="30" r="25" fill="#FF4444"/>
+                        <circle cx="30" cy="30" r="18" fill="none" stroke="white" stroke-width="3"/>
+                        <circle cx="30" cy="30" r="10" fill="none" stroke="white" stroke-width="3"/>
+                        <circle cx="30" cy="30" r="4" fill="white"/>
+                        <path d="M45 15 L50 10" stroke="#00CED1" stroke-width="3"/>
+                    </svg>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">✨</div>
-                    <div class="feature-title">ไลฟ์สไตล์</div>
-                    <div class="feature-description">พัฒนาคุณภาพชีวิตให้ดีขึ้นทุกวัน</div>
+                <h3 class="feature-title">เป้าหมาย</h3>
+                <p class="feature-description">วางแผนและบรรลุเป้าหมายในชีวิต</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon star">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                        <path d="M30 10 L35 25 L50 25 L38 35 L43 50 L30 40 L17 50 L22 35 L10 25 L25 25 Z" fill="#FFD700"/>
+                    </svg>
                 </div>
+                <h3 class="feature-title">ความสำเร็จ</h3>
+                <p class="feature-description">เคล็ดลับสู่ความสำเร็จในชีวิตและการงาน</p>
             </div>
         </div>
-    </div>
-
-    <script>
-        // Language switcher functionality
-        function toggleLanguageDropdown() {
-            const dropdown = document.getElementById('languageDropdown');
-            dropdown.classList.toggle('show');
-        }
-
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('show');
-        }
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
-            const languageSwitcher = document.querySelector('.language-switcher');
-            if (!languageSwitcher.contains(event.target)) {
-                document.getElementById('languageDropdown').classList.remove('show');
-            }
-        });
-
-        // Detect current language from URL and update the button
-        function updateCurrentLanguage() {
-            const path = window.location.pathname;
-            const languages = {
-                '/en/': { code: 'EN', flag: 'gb', name: 'English' },
-                '/es/': { code: 'ES', flag: 'es', name: 'Español' },
-                '/pt/': { code: 'PT', flag: 'br', name: 'Português' },
-                '/de/': { code: 'DE', flag: 'de', name: 'Deutsch' },
-                '/fr/': { code: 'FR', flag: 'fr', name: 'Français' },
-                '/ja/': { code: 'JA', flag: 'jp', name: '日本語' },
-                '/ko/': { code: 'KO', flag: 'kr', name: '한국어' },
-                '/zh/': { code: 'ZH', flag: 'cn', name: '中文' },
-                '/ar/': { code: 'AR', flag: 'sa', name: 'العربية' },
-                '/th/': { code: 'TH', flag: 'th', name: 'ไทย' }
-            };
-
-            // Find current language
-            for (const [langPath, langInfo] of Object.entries(languages)) {
-                if (path.includes(langPath)) {
-                    document.getElementById('currentFlag').src = `https://flagcdn.com/w40/${langInfo.flag}.png`;
-                    document.getElementById('currentLangCode').textContent = langInfo.code;
-                    
-                    // Update active state in dropdown
-                    document.querySelectorAll('.language-option').forEach(option => {
-                        option.classList.remove('active');
-                        if (option.href.includes(langPath)) {
-                            option.classList.add('active');
-                        }
-                    });
-                    break;
-                }
-            }
-        }
-
-        // Call on page load
-        updateCurrentLanguage();
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+    </section>
 </body>
 </html>
