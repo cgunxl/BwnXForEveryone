@@ -12,9 +12,11 @@ interface TrackedLinkProps {
   locale?: string | false
   ariaLabel?: string
   prefetch?: boolean
+  partner?: string
+  linkId?: string
 }
 
-export function TrackedLink({ href, eventName, children, className, onClick, locale, ariaLabel, prefetch }: TrackedLinkProps) {
+export function TrackedLink({ href, eventName, children, className, onClick, locale, ariaLabel, prefetch, partner, linkId }: TrackedLinkProps) {
   const handleClick = () => {
     // Track click event with GA4
     if (typeof window !== 'undefined' && window.gtag) {
@@ -24,6 +26,7 @@ export function TrackedLink({ href, eventName, children, className, onClick, loc
         event_action: 'click',
         page_path: window.location.pathname,
         page_title: document.title,
+        page_location: window.location.href,
         link_url: href,
         link_text: typeof children === 'string' ? children : 'link',
         value: 1,
@@ -31,6 +34,14 @@ export function TrackedLink({ href, eventName, children, className, onClick, loc
         custom_parameter_1: eventName,
         custom_parameter_2: 'user_interaction'
       })
+      
+      if (eventName.startsWith('click_out')) {
+        window.gtag('event', 'click_out', {
+          partner: partner || 'unknown',
+          link_id: linkId || href,
+          country: (navigator.language || 'th-TH').split('-').pop(),
+        })
+      }
       
       // Track user engagement
       window.gtag('event', 'user_engagement', {

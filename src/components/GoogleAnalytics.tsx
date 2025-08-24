@@ -51,6 +51,11 @@ export function GoogleAnalytics() {
               });
             }
           });
+
+          // GA4 recommended session_start
+          gtag('event', 'session_start', {
+            engagement_time_msec: 1
+          });
         `}
       </Script>
     </>

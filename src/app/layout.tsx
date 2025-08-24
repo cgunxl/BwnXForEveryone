@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { GoogleAnalytics } from '@/components/GoogleAnalytics'
 import { PageViewTracker } from '@/components/PageViewTracker'
+import { PostHogProvider } from '@/components/PostHogProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -42,6 +43,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <PageViewTracker />
+        <PostHogProvider />
         {children}
       </body>
     </html>

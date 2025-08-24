@@ -28,6 +28,8 @@ export function PageViewTracker() {
         page_title: document.title,
         page_location: window.location.href,
         page_category: getPageCategory(pathname),
+        locale: (navigator.language || 'th-TH').split('-')[0],
+        country: (navigator.language || 'th-TH').split('-').pop(),
         event_category: 'navigation',
         event_label: pathname
       })
