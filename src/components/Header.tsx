@@ -35,6 +35,7 @@ export function Header({ onMenuToggle }: HeaderProps) {
           <TrackedLink href="/" eventName="nav_home_click" className="hover:text-white transition-colors">หน้าหลัก</TrackedLink>
           <TrackedLink href="/products" eventName="nav_products_click" className="hover:text-white transition-colors">สินค้า</TrackedLink>
           <TrackedLink href="/Contact" eventName="nav_contact_click" className="hover:text-white transition-colors">ติดต่อ</TrackedLink>
+          <TrackedLink href="/blog/" eventName="nav_blog_click" className="hover:text-white transition-colors">บทความ</TrackedLink>
         </nav>
 
         {/* Center wide search bar for md+ screens */}

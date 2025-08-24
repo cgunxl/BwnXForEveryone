@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { getAllBlogPosts } from '@/lib/content'
 
 export const dynamic = 'force-static'
 
@@ -17,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return { languages }
   }
 
-  return [
+  const items: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -33,4 +34,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: makeAlternates('dashboard/'),
     },
   ]
+
+  // Blog posts (Thai only for now)
+  const posts = getAllBlogPosts().filter(p => p.lang === 'th')
+  for (const post of posts) {
+    items.push({
+      url: `${baseUrl}/blog/${post.slug}/`,
+      lastModified: new Date(post.frontmatter.date || new Date()),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    })
+  }
+
+  return items
 }
