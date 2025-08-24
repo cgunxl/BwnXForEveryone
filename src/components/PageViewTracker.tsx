@@ -70,7 +70,10 @@ export function PageViewTracker() {
 	const getSessionId = () => {
 		let sessionId = sessionStorage.getItem('ga_session_id')
 		if (!sessionId) {
-			sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)
+			const array = new Uint8Array(12);
+			window.crypto.getRandomValues(array);
+			const randString = Array.from(array).map(b => b.toString(16).padStart(2, '0')).join('');
+			sessionId = 'session_' + Date.now() + '_' + randString
 			sessionStorage.setItem('ga_session_id', sessionId)
 		}
 		return sessionId
