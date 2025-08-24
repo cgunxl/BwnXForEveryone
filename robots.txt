@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cgunxl.github.io/BwnXForEveryone/sitemap.xml
+Sitemap: https://cgunxl.github.io/sitemap_index.xml
