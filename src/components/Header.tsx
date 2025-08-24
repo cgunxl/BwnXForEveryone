@@ -1,6 +1,7 @@
 'use client'
 
 import { TrackedLink } from './TrackedLink'
+import LanguageSelector from './LanguageSelector'
 
 interface HeaderProps {
   onMenuToggle: () => void
@@ -37,8 +38,8 @@ export function Header({ onMenuToggle }: HeaderProps) {
           <TrackedLink href="/contact" eventName="nav_contact_click" className="hover:text-white transition-colors">ติดต่อ</TrackedLink>
         </nav>
 
-        {/* Right: Search button */}
-        <div className="ml-auto flex items-center">
+        {/* Right: Search button + language selector */}
+        <div className="ml-auto flex items-center gap-3">
           <button
             type="button"
             className="flex items-center gap-2 px-4 py-2 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-colors"
@@ -49,6 +50,7 @@ export function Header({ onMenuToggle }: HeaderProps) {
             </svg>
             <span>ค้นหา</span>
           </button>
+          <LanguageSelector />
         </div>
       </div>
     </header>

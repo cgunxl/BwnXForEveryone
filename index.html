@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BwnX - เว็บไซต์แนะนำการใช้ชีวิตด้วย บทความการแนะนำ</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- hreflang alternates -->
+    <link rel="alternate" hreflang="en" href="https://cgunxl.github.io/BwnXForEveryone/en/" />
+    <link rel="alternate" hreflang="es" href="https://cgunxl.github.io/BwnXForEveryone/es/" />
+    <link rel="alternate" hreflang="pt" href="https://cgunxl.github.io/BwnXForEveryone/pt/" />
+    <link rel="alternate" hreflang="de" href="https://cgunxl.github.io/BwnXForEveryone/de/" />
+    <link rel="alternate" hreflang="fr" href="https://cgunxl.github.io/BwnXForEveryone/fr/" />
+    <link rel="alternate" hreflang="ja" href="https://cgunxl.github.io/BwnXForEveryone/ja/" />
+    <link rel="alternate" hreflang="ko" href="https://cgunxl.github.io/BwnXForEveryone/ko/" />
+    <link rel="alternate" hreflang="zh" href="https://cgunxl.github.io/BwnXForEveryone/zh/" />
+    <link rel="alternate" hreflang="ar" href="https://cgunxl.github.io/BwnXForEveryone/ar/" />
+    <link rel="alternate" hreflang="th" href="https://cgunxl.github.io/BwnXForEveryone/th/" />
+    <link rel="alternate" hreflang="x-default" href="https://cgunxl.github.io/BwnXForEveryone/en/" />
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -23,12 +35,27 @@
             </div>
             <div class="nav-right">
                 <button class="btn-register">ปุ่มค้นหา</button>
-                <div class="language-selector">
-                    <img src="https://flagcdn.com/w20/th.png" alt="TH" class="flag-icon">
-                    <span>TH</span>
-                    <svg width="12" height="8" viewBox="0 0 12 8" fill="white">
-                        <path d="M1 1L6 6L11 1" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
+                <!-- Language Dropdown -->
+                <div class="language-dropdown" id="langDropdown">
+                    <button class="language-selector" aria-haspopup="true" aria-expanded="false" aria-label="เลือกภาษา">
+                        <img src="https://flagcdn.com/w20/th.png" alt="TH" class="flag-icon">
+                        <span>TH</span>
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="white" aria-hidden="true">
+                            <path d="M1 1L6 6L11 1" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="language-menu" role="menu" aria-label="Language menu">
+                        <a role="menuitem" href="./en/"><img src="https://flagcdn.com/w20/gb.png" alt="EN">English</a>
+                        <a role="menuitem" href="./es/"><img src="https://flagcdn.com/w20/es.png" alt="ES">Español</a>
+                        <a role="menuitem" href="./pt/"><img src="https://flagcdn.com/w20/pt.png" alt="PT">Português</a>
+                        <a role="menuitem" href="./de/"><img src="https://flagcdn.com/w20/de.png" alt="DE">Deutsch</a>
+                        <a role="menuitem" href="./fr/"><img src="https://flagcdn.com/w20/fr.png" alt="FR">Français</a>
+                        <a role="menuitem" href="./ja/"><img src="https://flagcdn.com/w20/jp.png" alt="JA">日本語</a>
+                        <a role="menuitem" href="./ko/"><img src="https://flagcdn.com/w20/kr.png" alt="KO">한국어</a>
+                        <a role="menuitem" href="./zh/"><img src="https://flagcdn.com/w20/cn.png" alt="ZH">中文</a>
+                        <a role="menuitem" href="./ar/"><img src="https://flagcdn.com/w20/sa.png" alt="AR">العربية</a>
+                        <a role="menuitem" href="./th/"><img src="https://flagcdn.com/w20/th.png" alt="TH">ไทย</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -95,5 +122,56 @@
             </div>
         </div>
     </section>
+
+    <script>
+      (function(){
+        const dropdown = document.getElementById('langDropdown');
+        if(!dropdown) return;
+        const button = dropdown.querySelector('.language-selector');
+        const menu = dropdown.querySelector('.language-menu');
+
+        function closeMenu(){
+          dropdown.classList.remove('is-open');
+          button && button.setAttribute('aria-expanded', 'false');
+        }
+        function openMenu(){
+          dropdown.classList.add('is-open');
+          button && button.setAttribute('aria-expanded', 'true');
+        }
+
+        button && button.addEventListener('click', function(e){
+          e.stopPropagation();
+          dropdown.classList.contains('is-open') ? closeMenu() : openMenu();
+        });
+
+        document.addEventListener('click', function(){ closeMenu(); });
+        document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closeMenu(); }});
+        menu && menu.addEventListener('click', function(e){
+          const link = e.target.closest('a');
+          if(link){ closeMenu(); }
+        });
+
+        // Update current flag/label by <html lang>
+        const current = (document.documentElement.getAttribute('lang') || 'th').toLowerCase();
+        const map = {
+          en: { label: 'EN', flag: 'https://flagcdn.com/w20/gb.png' },
+          es: { label: 'ES', flag: 'https://flagcdn.com/w20/es.png' },
+          pt: { label: 'PT', flag: 'https://flagcdn.com/w20/pt.png' },
+          de: { label: 'DE', flag: 'https://flagcdn.com/w20/de.png' },
+          fr: { label: 'FR', flag: 'https://flagcdn.com/w20/fr.png' },
+          ja: { label: 'JA', flag: 'https://flagcdn.com/w20/jp.png' },
+          ko: { label: 'KO', flag: 'https://flagcdn.com/w20/kr.png' },
+          zh: { label: 'ZH', flag: 'https://flagcdn.com/w20/cn.png' },
+          ar: { label: 'AR', flag: 'https://flagcdn.com/w20/sa.png' },
+          th: { label: 'TH', flag: 'https://flagcdn.com/w20/th.png' }
+        };
+        const img = dropdown.querySelector('.flag-icon');
+        const span = dropdown.querySelector('.language-selector span');
+        if(map[current]){
+          if(img) img.setAttribute('src', map[current].flag);
+          if(span) span.textContent = map[current].label;
+        }
+      })();
+    </script>
 </body>
 </html>

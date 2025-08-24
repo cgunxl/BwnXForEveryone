@@ -98,6 +98,7 @@ body {
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
+    border: none;
 }
 
 .language-selector:hover {
@@ -112,6 +113,49 @@ body {
     color: #ffffff;
     font-size: 14px;
     font-weight: 500;
+}
+
+/* Language dropdown menu */
+.language-dropdown {
+    position: relative;
+}
+
+.language-menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 8px 0;
+    width: 220px;
+    display: none;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.language-dropdown.is-open .language-menu {
+    display: block;
+}
+
+.language-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.95;
+}
+
+.language-menu a:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.language-menu img {
+    width: 20px;
+    height: 14px;
+    border-radius: 2px;
 }
 
 /* Hero Section */
