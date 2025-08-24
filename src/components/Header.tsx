@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { TrackedLink } from './TrackedLink'
 
 interface HeaderProps {
@@ -16,64 +15,39 @@ export function Header({ onMenuToggle }: HeaderProps) {
       <div className="h-0.5 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
       
       {/* Main header content */}
-      <div className="flex items-center justify-between px-6 py-3">
-        {/* Left: Logo + Nav */}
-        <div className="flex items-center gap-6">
-          {/* Circular floating logo with white border */}
-          <div className="relative w-10 h-10 rounded-full border-2 border-white/80 overflow-hidden shadow-lg animate-float bg-black/60">
-            <Image src="/globe.svg" alt="BwnX Logo" fill className="object-contain p-1" />
+      <div className="relative flex items-center px-6 py-3">
+        {/* Left: Burger button on small screens */}
+        <button
+          onClick={onMenuToggle}
+          className="md:hidden group relative p-2 rounded-xl border border-black/50 bg-black/40 hover:bg-black/60 transition-all duration-200 hover:scale-105"
+          aria-label="เปิดเมนู"
+        >
+          <div className="flex flex-col space-y-1.5">
+            <div className="w-5 h-0.5 bg-white transition-all duration-200 group-hover:bg-white/90"></div>
+            <div className="w-5 h-0.5 bg-white transition-all duration-200 group-hover:bg-white/90"></div>
+            <div className="w-5 h-0.5 bg-white transition-all duration-200 group-hover:bg-white/90"></div>
           </div>
+          <div className="absolute inset-0 bg-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+        </button>
 
-          {/* Burger button on small screens */}
+        {/* Center: Nav links (80% brightness) */}
+        <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6 text-white/80">
+          <TrackedLink href="/" eventName="nav_home_click" className="hover:text-white transition-colors">หน้าหลัก</TrackedLink>
+          <TrackedLink href="/products" eventName="nav_products_click" className="hover:text-white transition-colors">สินค้า</TrackedLink>
+          <TrackedLink href="/contact" eventName="nav_contact_click" className="hover:text-white transition-colors">ติดต่อ</TrackedLink>
+        </nav>
+
+        {/* Right: Search button */}
+        <div className="ml-auto flex items-center">
           <button
-            onClick={onMenuToggle}
-            className="md:hidden group relative p-2 rounded-xl border border-black/50 bg-black/40 hover:bg-black/60 transition-all duration-200 hover:scale-105"
-            aria-label="เปิดเมนู"
+            type="button"
+            className="flex items-center gap-2 px-4 py-2 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-colors"
+            aria-label="ค้นหา"
           >
-            <div className="flex flex-col space-y-1.5">
-              <div className="w-5 h-0.5 bg-white transition-all duration-200 group-hover:bg-white/90"></div>
-              <div className="w-5 h-0.5 bg-white transition-all duration-200 group-hover:bg-white/90"></div>
-              <div className="w-5 h-0.5 bg-white transition-all duration-200 group-hover:bg-white/90"></div>
-            </div>
-            <div className="absolute inset-0 bg-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-          </button>
-
-          {/* Nav links (80% brightness) */}
-          <nav className="hidden md:flex items-center gap-6 text-white/80">
-            <TrackedLink href="/" eventName="nav_home_click" className="hover:text-white transition-colors">หน้าหลัก</TrackedLink>
-            <TrackedLink href="/products" eventName="nav_products_click" className="hover:text-white transition-colors">สินค้า</TrackedLink>
-            <TrackedLink href="/contact" eventName="nav_contact_click" className="hover:text-white transition-colors">ติดต่อ</TrackedLink>
-          </nav>
-        </div>
-
-        {/* Center: Search bar */}
-        <div className="flex-1 px-4">
-          <div className="max-w-2xl mx-auto w-full">
-            <div className="relative">
-              <svg className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" />
-              </svg>
-              <input
-                type="text"
-                placeholder="ค้นหาสิ่งที่คุณต้องการ"
-                className="w-full rounded-full bg-black/40 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-white/40 pl-12 pr-5 py-2.5"
-                aria-label="ค้นหา"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Right: Language selector */}
-        <div className="flex items-center gap-3">
-          <button
-            className="flex items-center gap-2 px-3 py-2 rounded-xl border border-white/20 bg-black/40 hover:bg-white/10 transition-colors"
-            aria-label="เปลี่ยนภาษา"
-          >
-            <Image src="/globe.svg" alt="Language" width={18} height={18} className="opacity-80" />
-            <span className="text-white">TH</span>
-            <svg className="w-4 h-4 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 9l6 6 6-6" />
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" />
             </svg>
+            <span>ค้นหา</span>
           </button>
         </div>
       </div>
