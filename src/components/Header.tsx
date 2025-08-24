@@ -16,10 +16,10 @@ export function Header({ onMenuToggle }: HeaderProps) {
       
       {/* Main header content */}
       <div className="relative flex items-center px-6 py-3">
-        {/* Left: Burger button on small screens */}
+        {/* Left: Burger button on all screens */}
         <button
           onClick={onMenuToggle}
-          className="md:hidden group relative p-2 rounded-xl border border-black/50 bg-black/40 hover:bg-black/60 transition-all duration-200 hover:scale-105"
+          className="group relative p-2 rounded-xl border border-black/50 bg-black/40 hover:bg-black/60 transition-all duration-200 hover:scale-105"
           aria-label="เปิดเมนู"
         >
           <div className="flex flex-col space-y-1.5">
@@ -37,7 +37,21 @@ export function Header({ onMenuToggle }: HeaderProps) {
           <TrackedLink href="/contact" eventName="nav_contact_click" className="hover:text-white transition-colors">ติดต่อ</TrackedLink>
         </nav>
 
-        {/* Right: Language switcher + Search button */}
+        {/* Center wide search bar for md+ screens */}
+        <div className="hidden md:flex flex-1 justify-center px-6">
+          <div className="relative w-full max-w-2xl">
+            <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" />
+            </svg>
+            <input
+              type="text"
+              placeholder="ค้นหา"
+              className="w-full h-10 pl-10 pr-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-white/60 outline-none focus:border-white/40"
+            />
+          </div>
+        </div>
+
+        {/* Right: Language switcher */}
         <div className="ml-auto flex items-center gap-3">
           <div className="hidden md:flex items-center gap-2 text-white/80">
             <TrackedLink href="/th/" eventName="lang_th_click" className="hover:text-white text-xs">TH</TrackedLink>
@@ -50,17 +64,6 @@ export function Header({ onMenuToggle }: HeaderProps) {
             <TrackedLink href="/de/" eventName="lang_de_click" className="hover:text-white text-xs">DE</TrackedLink>
             <TrackedLink href="/ar/" eventName="lang_ar_click" className="hover:text-white text-xs">AR</TrackedLink>
           </div>
-
-          <button
-            type="button"
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-colors"
-            aria-label="ค้นหา"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" />
-            </svg>
-            <span>ค้นหา</span>
-          </button>
         </div>
       </div>
     </header>
