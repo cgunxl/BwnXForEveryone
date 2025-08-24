@@ -147,8 +147,8 @@ class LanguageSwitcher {
         if (navLinks[1]) navLinks[1].textContent = t.nav.products;
         if (navLinks[2]) navLinks[2].textContent = t.nav.contact;
         
-        const searchBtn = document.querySelector('.btn-register');
-        if (searchBtn) searchBtn.textContent = t.nav.search;
+        const searchInput = document.querySelector('.search-input');
+        if (searchInput) searchInput.placeholder = t.nav.search;
 
         // Update hero section
         const heroTitle = document.querySelector('.hero-title');
