@@ -1,5 +1,9 @@
 import { Metadata } from 'next'
 
+const BASE_ORIGIN = 'https://cgunxl.github.io'
+const BASE_PATH = '/BwnXForEveryone'
+const BASE_URL = `${BASE_ORIGIN}${BASE_PATH}`
+
 export function generateMetadata(): Metadata {
   return {
     title: 'BwnX Platform',
@@ -11,11 +15,11 @@ export function generateMetadata(): Metadata {
       description: 'BwnX Platform - Your innovative solution platform',
       type: 'website',
       locale: 'th_TH',
-      url: 'https://bwnx-platform.com',
+      url: BASE_URL,
       siteName: 'BwnX Platform',
       images: [
         {
-          url: '/og-image.jpg',
+          url: `${BASE_PATH}/og-image.jpg`,
           width: 1200,
           height: 630,
           alt: 'BwnX Platform',
@@ -26,7 +30,7 @@ export function generateMetadata(): Metadata {
       card: 'summary_large_image',
       title: 'BwnX Platform',
       description: 'BwnX Platform - Your innovative solution platform',
-      images: ['/og-image.jpg'],
+      images: [`${BASE_PATH}/og-image.jpg`],
     },
     robots: {
       index: true,
@@ -40,7 +44,18 @@ export function generateMetadata(): Metadata {
       },
     },
     alternates: {
-      canonical: 'https://bwnx-platform.com',
+      canonical: BASE_URL,
+      languages: {
+        th: `${BASE_URL}/th/`,
+        en: `${BASE_URL}/en/`,
+        ja: `${BASE_URL}/ja/`,
+        zh: `${BASE_URL}/zh/`,
+        es: `${BASE_URL}/es/`,
+        pt: `${BASE_URL}/pt/`,
+        fr: `${BASE_URL}/fr/`,
+        de: `${BASE_URL}/de/`,
+        ar: `${BASE_URL}/ar/`,
+      },
     },
   }
 }

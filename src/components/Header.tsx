@@ -37,8 +37,20 @@ export function Header({ onMenuToggle }: HeaderProps) {
           <TrackedLink href="/contact" eventName="nav_contact_click" className="hover:text-white transition-colors">ติดต่อ</TrackedLink>
         </nav>
 
-        {/* Right: Search button */}
-        <div className="ml-auto flex items-center">
+        {/* Right: Language switcher + Search button */}
+        <div className="ml-auto flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2 text-white/80">
+            <TrackedLink href="/th/" eventName="lang_th_click" className="hover:text-white text-xs">TH</TrackedLink>
+            <TrackedLink href="/en/" eventName="lang_en_click" className="hover:text-white text-xs">EN</TrackedLink>
+            <TrackedLink href="/ja/" eventName="lang_ja_click" className="hover:text-white text-xs">JA</TrackedLink>
+            <TrackedLink href="/zh/" eventName="lang_zh_click" className="hover:text-white text-xs">ZH</TrackedLink>
+            <TrackedLink href="/es/" eventName="lang_es_click" className="hover:text-white text-xs">ES</TrackedLink>
+            <TrackedLink href="/pt/" eventName="lang_pt_click" className="hover:text-white text-xs">PT</TrackedLink>
+            <TrackedLink href="/fr/" eventName="lang_fr_click" className="hover:text-white text-xs">FR</TrackedLink>
+            <TrackedLink href="/de/" eventName="lang_de_click" className="hover:text-white text-xs">DE</TrackedLink>
+            <TrackedLink href="/ar/" eventName="lang_ar_click" className="hover:text-white text-xs">AR</TrackedLink>
+          </div>
+
           <button
             type="button"
             className="flex items-center gap-2 px-4 py-2 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-colors"

@@ -9,9 +9,12 @@ interface TrackedLinkProps {
   children: ReactNode
   className?: string
   onClick?: () => void
+  locale?: string | false
+  ariaLabel?: string
+  prefetch?: boolean
 }
 
-export function TrackedLink({ href, eventName, children, className, onClick }: TrackedLinkProps) {
+export function TrackedLink({ href, eventName, children, className, onClick, locale, ariaLabel, prefetch }: TrackedLinkProps) {
   const handleClick = () => {
     // Track click event with GA4
     if (typeof window !== 'undefined' && window.gtag) {
@@ -45,7 +48,7 @@ export function TrackedLink({ href, eventName, children, className, onClick }: T
   }
 
   return (
-    <Link href={href} className={className} onClick={handleClick}>
+    <Link href={href} className={className} onClick={handleClick} locale={locale} aria-label={ariaLabel} prefetch={prefetch}>
       {children}
     </Link>
   )
