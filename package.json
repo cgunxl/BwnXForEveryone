@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
-    "export": "next export -o out",
+    "export": "echo 'Using output:export. Artifacts in .next and can be served statically.'",
     "start": "next start",
     "lint": "eslint"
   },

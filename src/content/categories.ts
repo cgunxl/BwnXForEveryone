@@ -103,6 +103,54 @@ export const categories: CategoryDef[] = [
 			{ key: 'affiliate-online-business', label: { th: 'Affiliate & Online Business Tips', en: 'Affiliate & Online Business Tips' }, emoji: '🔗' },
 		],
 	},
+	// New high-CPC verticals
+	{
+		key: 'law',
+		emoji: '⚖️',
+		label: { th: 'กฎหมาย', en: 'Law & Legal' },
+		description: { th: 'Law, Attorney, DUI, Mesothelioma', en: 'Law, Attorney, DUI, Mesothelioma' },
+		subcategories: [
+			{ key: 'attorney', label: { th: 'ทนายความ', en: 'Attorneys' }, emoji: '👩‍⚖️' },
+			{ key: 'dui-defense', label: { th: 'คดีเมาแล้วขับ (DUI)', en: 'DUI Defense' }, emoji: '🚔' },
+			{ key: 'mesothelioma', label: { th: 'เมโซธีลีโอมา', en: 'Mesothelioma' }, emoji: '🫁' },
+		],
+	},
+	{
+		key: 'insurance',
+		emoji: '🛡️',
+		label: { th: 'ประกัน', en: 'Insurance' },
+		description: { th: 'Health, Life, Auto', en: 'Health, Life, Auto' },
+		subcategories: [
+			{ key: 'health-insurance', label: { th: 'ประกันสุขภาพ', en: 'Health Insurance' }, emoji: '🏥' },
+			{ key: 'life-insurance', label: { th: 'ประกันชีวิต', en: 'Life Insurance' }, emoji: '❤️' },
+			{ key: 'auto-insurance', label: { th: 'ประกันรถยนต์', en: 'Auto Insurance' }, emoji: '🚘' },
+		],
+	},
+	{
+		key: 'finance',
+		emoji: '💳',
+		label: { th: 'การเงิน', en: 'Finance' },
+		description: { th: 'Loans, Mortgage, Credit Card, Investment, Crypto', en: 'Loans, Mortgage, Credit Card, Investment, Crypto' },
+		subcategories: [
+			{ key: 'loans', label: { th: 'สินเชื่อ', en: 'Loans' }, emoji: '💵' },
+			{ key: 'mortgage', label: { th: 'จำนองบ้าน', en: 'Mortgage' }, emoji: '🏠' },
+			{ key: 'credit-card', label: { th: 'บัตรเครดิต', en: 'Credit Cards' }, emoji: '💳' },
+			{ key: 'investment', label: { th: 'การลงทุน', en: 'Investment' }, emoji: '📈' },
+			{ key: 'crypto', label: { th: 'คริปโต', en: 'Crypto' }, emoji: '₿' },
+		],
+	},
+	{
+		key: 'medical-specialty',
+		emoji: '🩺',
+		label: { th: 'การแพทย์เฉพาะทาง', en: 'Medical Specialty' },
+		description: { th: 'Cosmetic Surgery, Rehab, Dental, Fertility', en: 'Cosmetic Surgery, Rehab, Dental, Fertility' },
+		subcategories: [
+			{ key: 'cosmetic-surgery', label: { th: 'ศัลยกรรมความงาม', en: 'Cosmetic Surgery' }, emoji: '💄' },
+			{ key: 'rehab', label: { th: 'ฟื้นฟูสมรรถภาพ', en: 'Rehab' }, emoji: '🧑‍⚕️' },
+			{ key: 'dental', label: { th: 'ทันตกรรม', en: 'Dental' }, emoji: '🦷' },
+			{ key: 'fertility', label: { th: 'ภาวะเจริญพันธุ์', en: 'Fertility' }, emoji: '👶' },
+		],
+	},
 	{
 		key: 'location',
 		emoji: '📍',

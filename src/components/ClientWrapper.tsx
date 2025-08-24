@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Header } from './Header'
 import { SlideMenu } from './SlideMenu'
+import { NavigationOverlay } from './NavigationOverlay'
 
 export function ClientWrapper() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -19,6 +20,7 @@ export function ClientWrapper() {
     <>
       <Header onMenuToggle={handleMenuToggle} />
       <SlideMenu isOpen={isMenuOpen} onClose={handleMenuClose} />
+      <NavigationOverlay />
     </>
   )
 }

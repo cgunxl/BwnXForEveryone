@@ -11,6 +11,20 @@ export const metadata: Metadata = {
   description: 'BwnX Platform - Your innovative solution platform',
   keywords: 'BwnX, Platform, Innovation, Technology',
   authors: [{ name: 'BwnX Team' }],
+  alternates: {
+    canonical: 'https://cgunxl.github.io/BwnXForEveryone/',
+    languages: {
+      th: 'https://cgunxl.github.io/BwnXForEveryone/th/',
+      en: 'https://cgunxl.github.io/BwnXForEveryone/en/',
+      ja: 'https://cgunxl.github.io/BwnXForEveryone/ja/',
+      zh: 'https://cgunxl.github.io/BwnXForEveryone/zh/',
+      es: 'https://cgunxl.github.io/BwnXForEveryone/es/',
+      pt: 'https://cgunxl.github.io/BwnXForEveryone/pt/',
+      fr: 'https://cgunxl.github.io/BwnXForEveryone/fr/',
+      de: 'https://cgunxl.github.io/BwnXForEveryone/de/',
+      ar: 'https://cgunxl.github.io/BwnXForEveryone/ar/',
+    },
+  },
   openGraph: {
     title: 'BwnX Platform',
     description: 'BwnX Platform - Your innovative solution platform',
@@ -40,6 +54,20 @@ export default function RootLayout({
     <html lang="th">
       <head>
         <GoogleAnalytics />
+        <script type="application/ld+json" suppressHydrationWarning>
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'BwnX Platform',
+            url: 'https://cgunxl.github.io/BwnXForEveryone/',
+            inLanguage: ['th','en','ja','zh','es','pt','fr','de','ar'],
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: 'https://cgunxl.github.io/BwnXForEveryone/search?q={search_term_string}',
+              'query-input': 'required name=search_term_string'
+            }
+          })}
+        </script>
       </head>
       <body className={inter.className}>
         <PageViewTracker />
