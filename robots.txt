@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cgunxl.github.io/BwnXForEveryone/sitemap.xml
